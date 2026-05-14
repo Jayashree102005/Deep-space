@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home1 - Core Hive</title>
+    <link rel="icon" href="images/logo.jpeg">
+    <script src="tailwind.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        /* RTL */
+        .rtl {
+            direction: rtl;
+        }
+
+        [dir="rtl"] .title {
+            margin-right: 20px !important;
+        }
+
+        /* THEME TOGGLE */
+        :root {
+            --home-bg: #ffffff;
+            --text-color: #111111;
+        }
+
+        [data-theme="dark"] {
+            --home-bg: #000000;
+            --text-color: #ffffff;
+        }
+
+        body {
+            background-color: var(--home-bg) !important;
+            color: var(--text-color);
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        [data-theme="dark"] .card,
+        [data-theme="dark"] .bg-white,
+        [data-theme="dark"] .bg-white\/90,
+        [data-theme="dark"] .bg-white\/80,
+        [data-theme="dark"] .bg-white\/10,
+        [data-theme="dark"] .bg-\[\#FDFBF9\],
+        [data-theme="dark"] .bg-\[\#EFEBE9\],
+        [data-theme="dark"] .bg-\[\#F9F7F5\] {
+            background-color: #000000 !important;
+            border-color: #333333 !important;
+        }
+
+        [data-theme="dark"] .btn,
+        [data-theme="dark"] .btn1:hover {
+            color: #000000 !important;
+        }
+
+        [data-theme="dark"] body,
+        [data-theme="dark"] p,
+        [data-theme="dark"] h1,
+        [data-theme="dark"] h2,
+        [data-theme="dark"] h3,
+        [data-theme="dark"] h4,
+        [data-theme="dark"] h5,
+        [data-theme="dark"] h6,
+        [data-theme="dark"] span,
+        [data-theme="dark"] li,
+        [data-theme="dark"] a,
+        [data-theme="dark"] i,
+        [data-theme="dark"] label,
+        [data-theme="dark"] table,
+        [data-theme="dark"] th,
+        [data-theme="dark"] td,
+        [data-theme="dark"] div,
+        [data-theme="dark"] small,
+        [data-theme="dark"] strong {
+            color: #ffffff !important;
+        }
+
+        [data-theme="dark"] thead {
+            background-color: #064E3B !important;
+        }
+
+        [data-theme="dark"] .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.7) !important;
+        }
+
+        [data-theme="dark"] .tag-btn {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            border-color: #ffffff !important;
+        }
+
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+    <div id="navbar"></div>
+
+    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-[#FDFBF9]">
+
+        <div class="absolute top-0 left-0 w-full h-1/2 md:w-1/2 md:h-full border-b md:border-b-0 md:border-r border-white/20">
+            <img src="images/pic1.avif" class="w-full h-full object-cover grayscale-[0.2]" alt="Unstaged Property">
+        </div>
+
+        <div class="absolute bottom-0 right-0 md:top-0 w-full h-1/2 md:w-1/2 md:h-full">
+            <img src="images/pic2.avif" class="w-full h-full object-cover" alt="Staged Property">
+        </div>
+
+        <div class="relative z-30 max-w-4xl mx-auto px-4 sm:px-6 mt-8">
+            <div class="bg-white/90 md:bg-white/80 backdrop-blur-xl p-6 sm:p-10 md:p-16 rounded-[2rem] md:rounded-[3rem] shadow-[0_30px_100px_rgba(62,39,35,0.3)] border border-white/50 text-center space-y-6 md:space-y-8 transform transition-transform hover:scale-[1.01] duration-700">
+
+                <div class="space-y-3 md:space-y-4">
+                    <h2 class="text-[#8D6E63] font-bold tracking-[0.2em] md:tracking-[0.4em] text-[10px] md:text-xs uppercase">
+                        Virtual Staging For Professionals
+                    </h2>
+                    <h1 class="text-3xl sm:text-4xl md:text-6xl font-black text-[#3E2723] leading-tight">
+                        Sell Homes <span class="text-[#8D6E63]">Faster</span> <br class="hidden sm:block">
+                        With AI Interiors.
+                    </h1>
+                    <p class="text-[#5D4037] text-sm md:text-lg max-w-xl mx-auto leading-relaxed">
+                        The ultimate toolkit for Realtors and Developers. Turn cold, empty listings into warm, inviting
+                        homes that capture buyers' hearts instantly.
+                    </p>
+                </div>
+
+                <div class="flex items-center justify-center pt-2">
+                    <a href="service.html" class="w-full sm:w-auto px-8 md:px-10 py-4 bg-[#3E2723] text-white rounded-xl md:rounded-2xl font-bold text-sm shadow-lg hover:bg-[#5D4037] transition-all transform hover:-translate-y-1">
+                        View our Services
+                    </a>
+                </div>
+
+                <div class="hidden sm:flex items-center justify-center gap-4 md:gap-6 pt-4 flex-wrap">
+                    <div class="flex items-center gap-2 text-[#8D6E63]">
+                        <i class="bi bi-lightning-charge-fill text-lg"></i>
+                        <span class="text-[10px] font-bold uppercase tracking-widest">Instant Render</span>
+                    </div>
+                    <div class="hidden md:block w-1 h-1 bg-[#D7CCC8] rounded-full"></div>
+                    <div class="flex items-center gap-2 text-[#8D6E63]">
+                        <i class="bi bi-award-fill text-lg"></i>
+                        <span class="text-[10px] font-bold uppercase tracking-widest">Ultra-HD Realism</span>
+                    </div>
+                    <div class="hidden md:block w-1 h-1 bg-[#D7CCC8] rounded-full"></div>
+                    <div class="flex items-center gap-2 text-[#8D6E63]">
+                        <i class="bi bi-graph-up-arrow text-lg"></i>
+                        <span class="text-[10px] font-bold uppercase tracking-widest">Boost Engagement</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+   <section class="py-20 md:py-32 bg-[#3E2723] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:30px_30px]"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-12 md:mb-20">
+            <h2 class="text-[#8D6E63] font-bold tracking-[0.2em] text-[10px] md:text-xs uppercase mb-3 md:mb-4">Proof of Concept</h2>
+            <h3 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">Pixel-Perfect Realism.</h3>
+            <p class="text-[#D7CCC8] mt-4 md:mt-6 text-sm md:text-lg leading-relaxed">
+                Drag the slider to see how DeepSpace AI transforms cold, empty spaces into warm, market-ready homes that buyers fall in love with.
+            </p>
+        </div>
+
+        <div class="relative w-full max-w-5xl mx-auto h-[400px] sm:h-[500px] md:h-[600px] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-4 border-white/10 group select-none">
+            
+            <img src="images/pic3.jpg" alt="Empty Room Before" class="absolute inset-0 w-full h-full object-cover pointer-events-none grayscale-[0.2]">
+            
+            <div class="absolute top-6 left-6 z-10 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full pointer-events-none">
+                <span class="text-[10px] md:text-xs font-bold text-white uppercase tracking-widest">Empty Listing</span>
+            </div>
+            <div class="absolute top-6 right-6 z-30 bg-[#8D6E63]/90 backdrop-blur-md px-4 py-2 rounded-full pointer-events-none">
+                <span class="text-[10px] md:text-xs font-bold text-white uppercase tracking-widest">AI Staged</span>
+            </div>
+
+            <div id="comparison-overlay" class="absolute inset-0 w-1/2 h-full overflow-hidden border-r-4 border-white shadow-[5px_0_15px_rgba(0,0,0,0.3)] z-20">
+                <img src="images/pic4.avif" alt="Staged Room After" class="absolute top-0 left-0 w-[100vw] max-w-[64rem] h-full object-cover pointer-events-none" style="width: 100vw; max-width: 1024px;"> </div>
+
+            <input type="range" min="0" max="100" value="50" id="comparison-slider" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-40">
+
+            <div id="slider-handle" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 bg-white rounded-full shadow-2xl flex items-center justify-center z-30 pointer-events-none transition-transform group-hover:scale-110">
+                <i class="bi bi-chevron-bar-expand text-[#3E2723] text-xl md:text-2xl transform rotate-90"></i>
+            </div>
+
+        </div>
+
+        <div class="max-w-4xl mx-auto mt-8 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-center border-t border-white/10 pt-8">
+            <div>
+                <p class="text-white font-bold text-lg md:text-xl">Urban Modern</p>
+                <p class="text-[#8D6E63] text-[10px] md:text-xs uppercase tracking-widest mt-1">Design Style</p>
+            </div>
+            <div>
+                <p class="text-white font-bold text-lg md:text-xl">&lt; 30 Sec</p>
+                <p class="text-[#8D6E63] text-[10px] md:text-xs uppercase tracking-widest mt-1">Render Time</p>
+            </div>
+            <div>
+                <p class="text-white font-bold text-lg md:text-xl">4K UHD</p>
+                <p class="text-[#8D6E63] text-[10px] md:text-xs uppercase tracking-widest mt-1">Resolution</p>
+            </div>
+            <div>
+                <p class="text-white font-bold text-lg md:text-xl">100%</p>
+                <p class="text-[#8D6E63] text-[10px] md:text-xs uppercase tracking-widest mt-1">Auto-Scaled</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section class="py-16 md:py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-10 md:gap-16 items-start">
+
+            <div class="lg:w-1/3 lg:sticky lg:top-32 space-y-4 md:space-y-6">
+                <h2 class="text-[#8D6E63] font-bold tracking-[0.2em] text-[10px] md:text-xs uppercase">The Workflow</h2>
+                <h3 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#3E2723] leading-tight">Scale your listings effortlessly.</h3>
+                <p class="text-[#5D4037] leading-relaxed text-sm md:text-lg">
+                    DeepSpace integrates directly into your real estate workflow. Less time designing, more time closing.
+                </p>
+                <a href="#" class="inline-flex items-center gap-2 text-[#3E2723] font-bold border-b-2 border-[#3E2723] pb-1 hover:text-[#8D6E63] hover:border-[#8D6E63] transition-all md:mt-4 text-sm md:text-base">
+                    Book a Demo <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="lg:w-2/3 space-y-6 md:space-y-8 w-full">
+
+                <div class="group bg-[#FDFBF9] border border-[#EFEBE9] p-6 sm:p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-sm hover:shadow-xl hover:border-[#8D6E63] transition-all duration-500 flex flex-col sm:flex-row gap-4 sm:gap-8 items-start sm:items-center">
+                    <div class="w-14 h-14 md:w-20 md:h-20 flex-shrink-0 bg-[#3E2723] text-white rounded-full flex items-center justify-center text-xl md:text-3xl font-black group-hover:scale-110 transition-transform duration-500">
+                        1
+                    </div>
+                    <div>
+                        <h4 class="text-xl md:text-2xl font-bold text-[#3E2723] mb-2 md:mb-3">Batch Upload</h4>
+                        <p class="text-[#5D4037] leading-relaxed text-sm md:text-base">
+                            Drag and drop entire folders of unstaged property photos. Our system organizes them by room type automatically.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group bg-[#FDFBF9] border border-[#EFEBE9] p-6 sm:p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-sm hover:shadow-xl hover:border-[#8D6E63] transition-all duration-500 flex flex-col sm:flex-row gap-4 sm:gap-8 items-start sm:items-center">
+                    <div class="w-14 h-14 md:w-20 md:h-20 flex-shrink-0 bg-[#3E2723] text-white rounded-full flex items-center justify-center text-xl md:text-3xl font-black group-hover:scale-110 transition-transform duration-500">
+                        2
+                    </div>
+                    <div>
+                        <h4 class="text-xl md:text-2xl font-bold text-[#3E2723] mb-2 md:mb-3">Assign Profiles</h4>
+                        <p class="text-[#5D4037] leading-relaxed text-sm md:text-base">
+                            Apply bulk styles. Choose "Urban Modern" for downtown lofts, or "Warm Scandi" for suburban homes with one click.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group bg-[#FDFBF9] border border-[#EFEBE9] p-6 sm:p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-sm hover:shadow-xl hover:border-[#8D6E63] transition-all duration-500 flex flex-col sm:flex-row gap-4 sm:gap-8 items-start sm:items-center">
+                    <div class="w-14 h-14 md:w-20 md:h-20 flex-shrink-0 bg-[#3E2723] text-white rounded-full flex items-center justify-center text-xl md:text-3xl font-black group-hover:scale-110 transition-transform duration-500">
+                        3
+                    </div>
+                    <div>
+                        <h4 class="text-xl md:text-2xl font-bold text-[#3E2723] mb-2 md:mb-3">Export & Publish</h4>
+                        <p class="text-[#5D4037] leading-relaxed text-sm md:text-base">
+                            Receive ultra-high-resolution, MLS-ready images directly to your inbox in minutes, completely watermarked with your agency logo.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-[#EFEBE9]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-10 md:mb-16">
+                <h3 class="text-3xl sm:text-4xl font-black text-[#3E2723]">The Return on Rendering</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+                <div class="group relative h-72 sm:h-80 md:h-96 bg-white rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-white shadow-sm hover:shadow-2xl hover:border-[#3E2723] transition-all duration-500">
+                    <div class="absolute inset-0 p-8 flex flex-col justify-center items-center text-center transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                        <div class="w-16 h-16 md:w-20 md:h-20 bg-[#FDFBF9] rounded-full flex items-center justify-center mb-4 md:mb-6 border border-[#EFEBE9]">
+                            <i class="bi bi-clock-history text-2xl md:text-3xl text-[#3E2723]"></i>
+                        </div>
+                        <h4 class="text-xl md:text-2xl font-bold text-[#3E2723]">Time Saved</h4>
+                        <div class="absolute bottom-6 text-[#8D6E63] text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] flex items-center gap-2 opacity-70 animate-pulse">
+                            Tap or Hover <i class="bi bi-chevron-up"></i>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-[#3E2723] p-8 flex flex-col justify-center items-center text-center translate-y-full transition-transform duration-500 ease-in-out group-hover:translate-y-0">
+                        <h4 class="text-5xl md:text-6xl font-black text-white mb-2 md:mb-4">14 Days</h4>
+                        <p class="text-[#D7CCC8] text-xs md:text-sm leading-relaxed max-w-[200px]">Average time saved bypassing physical furniture staging and delivery.</p>
+                    </div>
+                </div>
+
+                <div class="group relative h-72 sm:h-80 md:h-96 bg-white rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-white shadow-sm hover:shadow-2xl hover:border-[#3E2723] transition-all duration-500">
+                    <div class="absolute inset-0 p-8 flex flex-col justify-center items-center text-center transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                        <div class="w-16 h-16 md:w-20 md:h-20 bg-[#FDFBF9] rounded-full flex items-center justify-center mb-4 md:mb-6 border border-[#EFEBE9]">
+                            <i class="bi bi-currency-dollar text-2xl md:text-3xl text-[#3E2723]"></i>
+                        </div>
+                        <h4 class="text-xl md:text-2xl font-bold text-[#3E2723]">Cost Reduction</h4>
+                        <div class="absolute bottom-6 text-[#8D6E63] text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] flex items-center gap-2 opacity-70 animate-pulse">
+                            Tap or Hover <i class="bi bi-chevron-up"></i>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-[#3E2723] p-8 flex flex-col justify-center items-center text-center translate-y-full transition-transform duration-500 ease-in-out group-hover:translate-y-0">
+                        <h4 class="text-5xl md:text-6xl font-black text-white mb-2 md:mb-4">90%</h4>
+                        <p class="text-[#D7CCC8] text-xs md:text-sm leading-relaxed max-w-[200px]">Cheaper than traditional physical staging fees per property listing.</p>
+                    </div>
+                </div>
+
+                <div class="group relative h-72 sm:h-80 md:h-96 bg-white rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-white shadow-sm hover:shadow-2xl hover:border-[#3E2723] transition-all duration-500">
+                    <div class="absolute inset-0 p-8 flex flex-col justify-center items-center text-center transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                        <div class="w-16 h-16 md:w-20 md:h-20 bg-[#FDFBF9] rounded-full flex items-center justify-center mb-4 md:mb-6 border border-[#EFEBE9]">
+                            <i class="bi bi-graph-up text-2xl md:text-3xl text-[#3E2723]"></i>
+                        </div>
+                        <h4 class="text-xl md:text-2xl font-bold text-[#3E2723]">Sale Price Bump</h4>
+                        <div class="absolute bottom-6 text-[#8D6E63] text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] flex items-center gap-2 opacity-70 animate-pulse">
+                            Tap or Hover <i class="bi bi-chevron-up"></i>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-[#3E2723] p-8 flex flex-col justify-center items-center text-center translate-y-full transition-transform duration-500 ease-in-out group-hover:translate-y-0">
+                        <h4 class="text-5xl md:text-6xl font-black text-white mb-2 md:mb-4">+15%</h4>
+                        <p class="text-[#D7CCC8] text-xs md:text-sm leading-relaxed max-w-[200px]">Staged homes sell for significantly more than their empty counterparts.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-20 md:py-32 bg-[#3E2723] overflow-hidden">
+        <img src="images/bg3.avif"
+            class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-overlay">
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+            <div class="bg-white/10 backdrop-blur-2xl border border-white/20 p-8 md:p-20 rounded-[2rem] md:rounded-[3rem] shadow-2xl">
+                <i class="bi bi-houses-fill text-4xl md:text-5xl text-white mb-4 md:mb-6 inline-block"></i>
+                <h2 class="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-4 md:mb-6 tracking-tight">Don't list empty.<br>List
+                    <span class="text-[#D7CCC8] italic">Extraordinary</span>.</h2>
+                <p class="text-[#D7CCC8] text-sm md:text-lg max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed">
+                    Join the top 1% of real estate developers and agents utilizing AI staging to maximize property
+                    valuations and minimize market time.
+                </p>
+
+                <button type="submit" class="w-full sm:w-auto bg-[#3E2723] text-white px-8 py-4 rounded-xl md:rounded-2xl font-bold hover:bg-[#201412] border border-[#3E2723] transition-all whitespace-nowrap text-sm md:text-base">
+                    Create Free Account
+                </button>
+                <p class="text-[10px] md:text-xs text-white/50 mt-4 md:mt-6">No credit card required for your first room render.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-32 bg-[#FDFBF9] relative">
+        <div class="absolute top-0 left-0 w-full h-1/2"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12 md:mb-20">
+                <h2 class="text-[#8D6E63] font-bold tracking-[0.2em] text-[10px] md:text-xs uppercase mb-3 md:mb-4">Flexible Plans</h2>
+                <h3 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#3E2723]">Pricing that scales with you.</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-md md:max-w-5xl mx-auto items-stretch">
+
+                <div class="h-full flex flex-col bg-white border border-[#EFEBE9] p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] shadow-sm hover:shadow-xl transition-shadow duration-500 relative z-10">
+                    <div>
+                        <h4 class="text-xl md:text-2xl font-bold text-[#3E2723]">Independent Agent</h4>
+                        <p class="text-[#8D6E63] font-bold text-4xl md:text-5xl mt-3 md:mt-4">$15<span class="text-sm md:text-lg font-normal text-[#5D4037]">/photo</span></p>
+                        <p class="text-xs md:text-sm text-[#5D4037] mt-3 md:mt-4 leading-relaxed">
+                            Perfect for solo realtors looking to stage occasional empty listings without physical
+                            furniture rentals.
+                        </p>
+                    </div>
+
+                    <ul class="mt-6 md:mt-8 mb-8 md:mb-10 space-y-4 md:space-y-5 flex-grow text-sm md:text-base">
+                        <li class="flex items-start gap-3 text-[#5D4037]">
+                            <i class="bi bi-check2-circle text-[#8D6E63] text-lg md:text-xl mt-0.5"></i>
+                            <span>24-hour turnaround</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-[#5D4037]">
+                            <i class="bi bi-check2-circle text-[#8D6E63] text-lg md:text-xl mt-0.5"></i>
+                            <span>2 free style revisions</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-[#5D4037]">
+                            <i class="bi bi-check2-circle text-[#8D6E63] text-lg md:text-xl mt-0.5"></i>
+                            <span>Standard furniture library access</span>
+                        </li>
+                    </ul>
+
+                    <a href="#" class="btn1 mt-auto block text-center w-full py-3 md:py-4 border-2 border-[#EFEBE9] rounded-xl md:rounded-2xl font-bold text-[#3E2723] hover:border-[#3E2723] hover:bg-[#FDFBF9] transition-all text-sm md:text-base">
+                        Start Pay-As-You-Go
+                    </a>
+                </div>
+
+                <div class="h-full flex flex-col bg-[#3E2723] p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] shadow-[0_20px_50px_rgba(62,39,35,0.2)] relative z-20 border border-[#5D4037]">
+                    <div class="absolute -top-3 md:-top-4 left-1/2 -translate-x-1/2 bg-[#8D6E63] text-white text-[9px] md:text-[10px] font-bold uppercase tracking-widest px-4 md:px-6 py-1.5 md:py-2 rounded-full shadow-lg whitespace-nowrap">
+                        Most Popular
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl md:text-2xl font-bold text-white">Agency Pro</h4>
+                        <p class="text-white font-black text-4xl md:text-6xl mt-3 md:mt-4">$299<span class="text-sm md:text-xl font-normal text-[#D7CCC8]">/mo</span></p>
+                        <p class="text-xs md:text-sm text-[#D7CCC8] mt-3 md:mt-4 leading-relaxed">
+                            For high-volume brokerages and real estate developers looking to automate their marketing.
+                        </p>
+                    </div>
+
+                    <ul class="mt-6 md:mt-8 mb-8 md:mb-10 space-y-4 md:space-y-5 flex-grow text-sm md:text-base">
+                        <li class="flex items-start gap-3 text-white">
+                            <i class="bi bi-star-fill text-[#D7CCC8] mt-1 text-xs md:text-sm"></i>
+                            <span>Up to 50 staged photos / month</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-white">
+                            <i class="bi bi-star-fill text-[#D7CCC8] mt-1 text-xs md:text-sm"></i>
+                            <span>Priority 1-hour AI renders</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-white">
+                            <i class="bi bi-star-fill text-[#D7CCC8] mt-1 text-xs md:text-sm"></i>
+                            <span>Premium designer furniture access</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-white">
+                            <i class="bi bi-star-fill text-[#D7CCC8] mt-1 text-xs md:text-sm"></i>
+                            <span>Custom agency watermarking</span>
+                        </li>
+                    </ul>
+
+                    <a href="#" class="mt-auto block text-center w-full py-3 md:py-4 bg-white text-[#3E2723] rounded-xl md:rounded-2xl font-black shadow-lg hover:bg-[#EFEBE9] hover:scale-[1.02] transition-all text-sm md:text-base">
+                        Upgrade to Pro
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+                    },
+                },
+            },
+        }
+    document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.getElementById('comparison-slider');
+        const overlay = document.getElementById('comparison-overlay');
+        const handle = document.getElementById('slider-handle');
+
+        // Update the image reveal and handle position when the user drags the slider
+        slider.addEventListener('input', function(e) {
+            const sliderValue = e.target.value;
+            overlay.style.width = `${sliderValue}%`;
+            handle.style.left = `${sliderValue}%`;
+        });
+    });
+    </script>
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>StagingStudio | Client Dashboard - Home Renovation Visualizer</title>
+    <link rel="icon" href="https://img.icons8.com/ios-filled/50/ffffff/interior-design.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+                    },
+                    colors: {
+                        wood: {
+                            50: '#EFEBE9',
+                            100: '#D7CCC8',
+                            200: '#BCAAA4',
+                            300: '#A1887F',
+                            400: '#8D6E63',
+                            500: '#795548',
+                            600: '#6D4C41',
+                            700: '#5D4037',
+                            800: '#4E342E',
+                            900: '#3E2723',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            transition: background-color 0.2s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.02);
+            transition: transform 0.2s ease;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #D7CCC8;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #5D4037;
+            border-radius: 10px;
+        }
+
+        .dark ::-webkit-scrollbar-track {
+            background: #3E2723;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #8D6E63;
+        }
+
+        /* Improved dark mode text visibility */
+        .dark .text-wood-800 {
+            color: #EFEBE9 !important;
+        }
+
+        .dark .text-wood-700 {
+            color: #EFEBE9 !important;
+        }
+
+        .dark .text-wood-600 {
+            color: #D7CCC8 !important;
+        }
+
+        .dark .text-wood-500 {
+            color: #BCAAA4 !important;
+        }
+
+        .dark .border-wood-200 {
+            border-color: #4E342E !important;
+        }
+
+        .dark .border-wood-300 {
+            border-color: #5D4037 !important;
+        }
+
+        .dark .bg-wood-50 {
+            background-color: #1a1412 !important;
+        }
+
+        .dark .bg-white {
+            background-color: #2D2A2A !important;
+        }
+
+        .dark .bg-wood-100 {
+            background-color: #2D2A2A !important;
+        }
+
+        .dark .hover\:bg-wood-100:hover {
+            background-color: #4E342E !important;
+        }
+
+        .dark .hover\:bg-wood-50:hover {
+            background-color: #3E2723 !important;
+        }
+    </style>
+</head>
+
+<body class="bg-wood-50 dark:bg-[#1a1412] transition-colors duration-300 font-sans antialiased">
+
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- mobile overlay -->
+        <div id="overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-40 lg:hidden transition-all"></div>
+
+        <!-- SIDEBAR - CLIENT SECTIONS -->
+        <aside id="sidebar"
+            class="fixed lg:static inset-y-0 left-0 w-72 bg-white dark:bg-wood-900 text-wood-800 dark:text-wood-50 flex flex-col transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out z-50 shadow-2xl lg:shadow-lg">
+            <div
+                class="p-5 text-2xl font-bold flex justify-between items-center border-b border-wood-300 dark:border-wood-700">
+                <h1 class="text-2xl font-bold text-[#3E2723] dark:text-white">
+                    <a href="index.html" class="flex items-center gap-2 transition">
+                        <i class="bi bi-layers-half text-[#8D6E63] dark:text-white"></i>
+                        <span class="tracking-tight">DEEP</span>
+                        <span class="font-normal">SPACE</span>
+                    </a>
+                </h1>
+                <button id="closeSidebar"
+                    class="lg:hidden text-wood-700 dark:text-wood-300 hover:bg-wood-200 dark:hover:bg-wood-800 p-2 rounded-full"><i
+                        class="bi bi-x-lg text-xl"></i></button>
+            </div>
+
+            <nav class="flex-1 p-4 space-y-2 text-sm overflow-y-auto">
+                <!-- CLIENT NAVIGATION SECTIONS -->
+                <a href="javascript:void(0)" onclick="showSection('dashboard')"
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl bg-wood-200 dark:bg-wood-700 font-semibold transition-all shadow-sm text-wood-800 dark:text-wood-50">
+                    <i class="bi bi-house-door-fill text-lg"></i> My Dashboard
+                </a>
+                <a href="javascript:void(0)" onclick="showSection('upload-visualize')"
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-wood-200 dark:hover:bg-wood-800 transition-all text-wood-700 dark:text-wood-200">
+                    <i class="bi bi-camera-fill text-lg"></i> Upload Room
+                </a>
+                <a href="javascript:void(0)" onclick="showSection('style-gallery')"
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-wood-200 dark:hover:bg-wood-800 transition-all text-wood-700 dark:text-wood-200">
+                    <i class="bi bi-palette-fill text-lg"></i> Design Styles
+                </a>
+                <a href="javascript:void(0)" onclick="showSection('my-stagings')"
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-wood-200 dark:hover:bg-wood-800 transition-all text-wood-700 dark:text-wood-200">
+                    <i class="bi bi-images text-lg"></i> My Stagings
+                </a>
+                <a href="javascript:void(0)" onclick="showSection('shopping-list')"
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-wood-200 dark:hover:bg-wood-800 transition-all text-wood-700 dark:text-wood-200">
+                    <i class="bi bi-cart-check-fill text-lg"></i> My Shopping List
+                </a>
+
+                <div class="pt-8 mt-4 border-t border-wood-300 dark:border-wood-700">
+                    <a href="login.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-wood-200 dark:hover:bg-wood-800 transition-all text-red-700 dark:text-red-400">
+                        <i class="bi bi-box-arrow-left text-lg"></i> Logout
+                    </a>
+                </div>
+            </nav>
+
+            <!-- theme/rtl for mobile -->
+            <div class="lg:hidden px-4 pb-6 space-y-2 border-t border-wood-300 dark:border-wood-700 pt-4">
+                <button id="themeBtnMobile"
+                    class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-wood-200 dark:hover:bg-wood-800 transition text-wood-700 dark:text-wood-200">
+                    <i id="themeIconMobile" class="bi bi-moon-fill text-lg"></i> <span>Dark / Light</span>
+                </button>
+                <button id="rtlBtnMobile"
+                    class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-wood-200 dark:hover:bg-wood-800 transition text-wood-700 dark:text-wood-200">
+                    <i class="bi bi-arrow-left-right text-lg"></i> <span>RTL Mode</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <div class="flex-1 flex flex-col overflow-hidden w-full">
+            <!-- Top Bar with User Profile -->
+            <header
+                class="bg-white dark:bg-wood-900 shadow-md px-4 sm:px-6 py-3 flex justify-between items-center z-20 border-b border-wood-200 dark:border-wood-700">
+                <div class="flex items-center gap-3">
+                    <button id="openSidebar"
+                        class="lg:hidden text-2xl text-wood-700 dark:text-wood-200 p-1 hover:bg-wood-100 dark:hover:bg-wood-800 rounded-lg">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <h1 id="page-title" class="text-lg sm:text-xl font-bold text-wood-700 dark:text-wood-50 truncate">
+                        My Dashboard
+                    </h1>
+                </div>
+
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <!-- desktop theme/rtl -->
+                    <div class="hidden md:flex gap-2">
+                        <button id="themeBtnDesktop"
+                            class="p-2 rounded-lg border border-wood-300 dark:border-wood-600 text-wood-600 dark:text-wood-300 hover:bg-wood-100 dark:hover:bg-wood-800 transition">
+                            <i id="themeIconDesktop" class="bi bi-moon-fill text-base"></i>
+                        </button>
+                        <button id="rtlBtnDesktop"
+                            class="p-2 rounded-lg border border-wood-300 dark:border-wood-600 text-wood-600 dark:text-wood-300 hover:bg-wood-100 dark:hover:bg-wood-800 transition">
+                            <i class="bi bi-arrow-left-right text-base"></i>
+                        </button>
+                    </div>
+
+                    <!-- USER PROFILE in top bar -->
+                    <div
+                        class="flex items-center gap-2 sm:gap-3 pl-2 sm:pl-3 border-l border-wood-200 dark:border-wood-700">
+                        <div class="text-right hidden sm:block">
+                            <p class="text-xs sm:text-sm font-semibold text-wood-700 dark:text-wood-50 leading-tight">
+                                Linda Park</p>
+                            <p class="text-[10px] sm:text-xs text-wood-500 dark:text-wood-400">Homeowner</p>
+                        </div>
+                        <div class="relative group">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg"
+                                class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-wood-600 object-cover cursor-pointer shadow-sm">
+                            <div
+                                class="absolute right-0 mt-3 w-52 bg-white dark:bg-wood-800 rounded-xl shadow-xl border border-wood-200 dark:border-wood-700 hidden group-hover:block transition-all z-30">
+                                <div class="p-3 border-b border-wood-100 dark:border-wood-700">
+                                    <p class="font-semibold text-wood-800 dark:text-wood-50">Linda Park</p>
+                                    <p class="text-xs text-wood-500 dark:text-wood-400">linda.park@example.com</p>
+                                    <span
+                                        class="inline-block text-[10px] bg-wood-100 dark:bg-wood-700 text-wood-600 dark:text-wood-300 px-2 py-0.5 rounded-full mt-1">Premium
+                                        Client</span>
+                                </div>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm hover:bg-wood-50 dark:hover:bg-wood-700 text-wood-700 dark:text-wood-200">My
+                                    Profile</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm hover:bg-wood-50 dark:hover:bg-wood-700 text-wood-700 dark:text-wood-200">Project
+                                    Settings</a>
+                                <a href="login.html"
+                                    class="block px-4 py-2 text-sm hover:bg-wood-50 dark:hover:bg-wood-700 text-red-600 dark:text-red-400 border-t border-wood-100 dark:border-wood-700">Sign
+                                    Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="flex-1 overflow-y-auto p-3 sm:p-5 md:p-6 bg-wood-50 dark:bg-[#1a1412]">
+
+                <!-- SECTION 1: CLIENT DASHBOARD -->
+                <div id="section-dashboard" class="content-section space-y-5 md:space-y-6">
+                    <div
+                        class="bg-gradient-to-r from-wood-700 to-wood-600 text-white p-5 sm:p-8 rounded-2xl shadow-xl relative overflow-hidden">
+                        <div class="relative z-10">
+                            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Welcome back, Linda! 👋</h2>
+                            <p class="opacity-90 mt-2 max-w-2xl text-xs sm:text-sm leading-relaxed">
+                                Your renovation journey starts here. Upload room photos, explore design styles, and see
+                                AI-powered staging previews. Track your projects and shopping list all in one place.
+                            </p>
+                        </div>
+                        <i class="bi bi-brush-fill absolute right-2 -bottom-6 text-8xl sm:text-9xl opacity-10"></i>
+                    </div>
+
+                    <!-- stats grid for client -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div
+                            class="bg-white dark:bg-wood-800 p-4 sm:p-5 rounded-2xl shadow-md border border-wood-200 dark:border-wood-700">
+                            <p class="text-wood-500 dark:text-wood-400 text-[11px] font-bold uppercase tracking-wider">
+                                Active Projects</p>
+                            <h3 class="text-2xl font-black text-wood-700 dark:text-wood-50 mt-1">2</h3>
+                            <p class="text-[10px] text-green-600 dark:text-green-400 mt-1">Living Room + Bedroom</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-wood-800 p-4 sm:p-5 rounded-2xl shadow-md border border-wood-200 dark:border-wood-700">
+                            <p class="text-wood-500 dark:text-wood-400 text-[11px] font-bold uppercase tracking-wider">
+                                Staging Previews</p>
+                            <h3 class="text-2xl font-black text-wood-700 dark:text-wood-50 mt-1">4</h3>
+                            <p class="text-[10px] text-wood-500 dark:text-wood-400 mt-1">2 pending approval</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-wood-800 p-4 sm:p-5 rounded-2xl shadow-md border border-wood-200 dark:border-wood-700">
+                            <p class="text-wood-500 dark:text-wood-400 text-[11px] font-bold uppercase tracking-wider">
+                                Design Style Saved</p>
+                            <h3 class="text-2xl font-black text-wood-700 dark:text-wood-50 mt-1">3</h3>
+                            <p class="text-[10px] text-wood-500 dark:text-wood-400 mt-1">Farmhouse, Japandi, Organic</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-wood-800 p-4 sm:p-5 rounded-2xl shadow-md border border-wood-200 dark:border-wood-700">
+                            <p class="text-wood-500 dark:text-wood-400 text-[11px] font-bold uppercase tracking-wider">
+                                Shopping List Total</p>
+                            <h3 class="text-2xl font-black text-green-600 dark:text-green-400 mt-1">$2,890</h3>
+                            <p class="text-[10px] text-wood-500 dark:text-wood-400 mt-1">6 items ready to order</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                        <div
+                            class="bg-white dark:bg-wood-800 p-5 rounded-2xl shadow-sm border border-wood-200 dark:border-wood-700">
+                            <h3 class="font-bold text-wood-700 dark:text-wood-50 flex items-center gap-2"><i
+                                    class="bi bi-clock-history"></i> Recent Activity</h3>
+                            <div class="space-y-3 mt-3">
+                                <div
+                                    class="flex justify-between items-center border-b pb-2 border-wood-100 dark:border-wood-700">
+                                    <span class="text-sm text-wood-600 dark:text-wood-300">Uploaded living room
+                                        photo</span><span class="text-xs text-wood-400 dark:text-wood-500">2 days
+                                        ago</span>
+                                </div>
+                                <div
+                                    class="flex justify-between items-center border-b pb-2 border-wood-100 dark:border-wood-700">
+                                    <span class="text-sm text-wood-600 dark:text-wood-300">New staging preview
+                                        ready</span><span class="text-xs text-wood-400 dark:text-wood-500">Yesterday</span>
+                                </div>
+                                <div class="flex justify-between items-center"><span
+                                        class="text-sm text-wood-600 dark:text-wood-300">Shopping list updated with
+                                        Haven Sofa</span><span class="text-xs text-wood-400 dark:text-wood-500">3 hours
+                                        ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-wood-800 p-5 rounded-2xl shadow-sm border border-wood-200 dark:border-wood-700">
+                            <h3 class="font-bold text-wood-700 dark:text-wood-50 flex items-center gap-2"><i
+                                    class="bi bi-chat-dots"></i> Designer Notes</h3>
+                            <div class="space-y-3 mt-3">
+                                <div class="p-3 bg-wood-50 dark:bg-wood-900/50 rounded-lg">
+                                    <p class="text-sm text-wood-600 dark:text-wood-300">"The farmhouse style looks
+                                        stunning in your living room. I've added a curated furniture selection to your
+                                        shopping list."</p>
+                                    <p class="text-xs text-wood-400 dark:text-wood-500 mt-2">— Elena Wright, Designer
+                                    </p>
+                                </div>
+                                <button
+                                    class="text-sm text-wood-600 dark:text-wood-400 hover:text-wood-700 transition">Send
+                                    message →</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: UPLOAD ROOM -->
+                <div id="section-upload-visualize" class="content-section hidden space-y-5">
+                    <div>
+                        <h2 class="text-2xl font-bold text-wood-700 dark:text-wood-50">Upload Your Room</h2>
+                        <p class="text-sm text-wood-500 dark:text-wood-400">Upload photos of your space and let AI
+                            generate stunning design previews</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div
+                            class="bg-white dark:bg-wood-800 rounded-2xl p-5 shadow-sm border border-wood-200 dark:border-wood-700">
+                            <h3 class="font-bold mb-3 flex items-center gap-2 text-wood-700 dark:text-wood-50"><i
+                                    class="bi bi-camera"></i> Upload Photo</h3>
+                            <div
+                                class="bg-wood-50 dark:bg-wood-900/50 rounded-xl h-48 flex flex-col items-center justify-center border-2 border-dashed border-wood-300 dark:border-wood-600 cursor-pointer hover:bg-wood-100 dark:hover:bg-wood-800 transition">
+                                <i class="bi bi-cloud-upload text-5xl text-wood-400 dark:text-wood-500"></i>
+                                <span class="text-xs text-wood-500 dark:text-wood-400 mt-2">Drag & drop or click to
+                                    upload</span>
+                            </div>
+                            <button
+                                class="mt-4 bg-wood-600 hover:bg-wood-700 text-white px-4 py-2 rounded-xl text-sm w-full transition">Select
+                                Image</button>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-wood-800 rounded-2xl p-5 shadow-sm border border-wood-200 dark:border-wood-700">
+                            <h3 class="font-bold mb-3 flex items-center gap-2 text-wood-700 dark:text-wood-50"><i
+                                    class="bi bi-magic"></i> Room Details</h3>
+                            <div class="space-y-3">
+                                <select
+                                    class="w-full border border-wood-200 dark:border-wood-700 dark:bg-wood-900 rounded-xl p-2 text-sm text-wood-700 dark:text-wood-200">
+                                    <option>Living Room</option>
+                                    <option>Bedroom</option>
+                                    <option>Kitchen</option>
+                                    <option>Home Office</option>
+                                    <option>Bathroom</option>
+                                </select>
+                                <input type="text" placeholder="Room name (e.g., Master Bedroom)"
+                                    class="w-full border border-wood-200 dark:border-wood-700 dark:bg-wood-900 rounded-xl p-2 text-sm text-wood-700 dark:text-wood-200">
+                                <button
+                                    class="w-full bg-wood-600 hover:bg-wood-700 text-white py-2 rounded-xl text-sm transition">Upload
+                                    & Process</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-wood-100 dark:bg-wood-800/40 p-4 rounded-xl flex gap-4 items-center"><i
+                            class="bi bi-info-circle-fill text-wood-600 dark:text-wood-400"></i><span
+                            class="text-sm text-wood-700 dark:text-wood-300">Our AI will generate multiple staging
+                            options within 24 hours. You'll receive a notification when ready.</span></div>
+                </div>
+
+                <!-- SECTION 3: DESIGN STYLES GALLERY -->
+                <div id="section-style-gallery" class="content-section hidden space-y-5">
+                    <h2 class="text-2xl font-bold text-wood-700 dark:text-wood-50">Explore Design Styles</h2>
+                    <p class="text-sm text-wood-500 dark:text-wood-400">Save your favorite styles to apply to your room
+                        stagings</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                        <div
+                            class="bg-white dark:bg-wood-800 rounded-xl overflow-hidden shadow border border-wood-200 dark:border-wood-700 hover-scale transition cursor-pointer">
+                            <div class="h-36 bg-wood-300 dark:bg-wood-700 flex items-center justify-center"><i
+                                    class="bi bi-house-heart text-5xl text-white/80"></i></div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-wood-700 dark:text-wood-50">Modern Farmhouse</h3>
+                                <p class="text-xs text-wood-500 dark:text-wood-400 mt-1">Shiplap, neutral tones, vintage
+                                    accents</p>
+                                <button
+                                    class="mt-3 w-full text-sm border border-wood-300 dark:border-wood-600 rounded-lg py-1.5 text-wood-600 dark:text-wood-400 hover:bg-wood-50 dark:hover:bg-wood-700 transition">Save
+                                    Style</button>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-wood-800 rounded-xl overflow-hidden shadow border border-wood-200 dark:border-wood-700 hover-scale transition cursor-pointer">
+                            <div class="h-36 bg-wood-400 dark:bg-wood-600 flex items-center justify-center"><i
+                                    class="bi bi-flower2 text-5xl text-white/80"></i></div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-wood-700 dark:text-wood-50">Japandi Minimalism</h3>
+                                <p class="text-xs text-wood-500 dark:text-wood-400 mt-1">Warm wood, clean lines, zen
+                                    atmosphere</p>
+                                <button
+                                    class="mt-3 w-full text-sm border border-wood-300 dark:border-wood-600 rounded-lg py-1.5 text-wood-600 dark:text-wood-400 hover:bg-wood-50 dark:hover:bg-wood-700 transition">Save
+                                    Style</button>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-wood-800 rounded-xl overflow-hidden shadow border border-wood-200 dark:border-wood-700 hover-scale transition cursor-pointer">
+                            <div class="h-36 bg-wood-500 dark:bg-wood-500 flex items-center justify-center"><i
+                                    class="bi bi-gem text-5xl text-white/80"></i></div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-wood-700 dark:text-wood-50">Organic Modern</h3>
+                                <p class="text-xs text-wood-500 dark:text-wood-400 mt-1">Curved furniture, natural
+                                    stone, earthy palette</p>
+                                <button
+                                    class="mt-3 w-full text-sm border border-wood-300 dark:border-wood-600 rounded-lg py-1.5 text-wood-600 dark:text-wood-400 hover:bg-wood-50 dark:hover:bg-wood-700 transition">Save
+                                    Style</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 4: MY STAGINGS -->
+                <div id="section-my-stagings" class="content-section hidden space-y-5">
+                    <div class="flex justify-between items-center flex-wrap gap-3">
+                        <div>
+                            <h2 class="text-2xl font-bold text-wood-700 dark:text-wood-50">My Staging Previews</h2>
+                            <p class="text-sm text-wood-500 dark:text-wood-400">View and approve AI-generated room
+                                designs</p>
+                        </div>
+                        <button
+                            class="bg-wood-600 hover:bg-wood-700 text-white px-4 py-2 rounded-xl text-sm transition">Request
+                            New Staging</button>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div
+                            class="bg-white dark:bg-wood-800 rounded-2xl overflow-hidden shadow border border-wood-200 dark:border-wood-700">
+                            <div class="h-48 bg-wood-300 dark:bg-wood-700 flex items-center justify-center relative">
+                                <i class="bi bi-house-check text-6xl text-white/60"></i>
+                                <span
+                                    class="absolute top-3 right-3 text-xs bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-400 px-2 py-1 rounded-full">Ready</span>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-wood-700 dark:text-wood-50">Living Room - Farmhouse Style</h3>
+                                <p class="text-xs text-wood-500 dark:text-wood-400 mt-1">Generated Mar 15, 2026</p>
+                                <div class="flex gap-2 mt-4">
+                                    <button
+                                        class="flex-1 text-sm bg-wood-600 hover:bg-wood-700 text-white rounded-lg py-2 transition">View
+                                        Preview</button>
+                                    <button
+                                        class="flex-1 text-sm border border-wood-300 dark:border-wood-600 rounded-lg py-2 text-wood-600 dark:text-wood-400 hover:bg-wood-50 dark:hover:bg-wood-700 transition">Approve</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-wood-800 rounded-2xl overflow-hidden shadow border border-wood-200 dark:border-wood-700">
+                            <div class="h-48 bg-wood-400 dark:bg-wood-600 flex items-center justify-center relative">
+                                <i class="bi bi-hourglass-split text-6xl text-white/60"></i>
+                                <span
+                                    class="absolute top-3 right-3 text-xs bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-400 px-2 py-1 rounded-full">Processing</span>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-wood-700 dark:text-wood-50">Master Bedroom - Japandi</h3>
+                                <p class="text-xs text-wood-500 dark:text-wood-400 mt-1">Requested Mar 18, 2026</p>
+                                <div class="flex gap-2 mt-4">
+                                    <button
+                                        class="flex-1 text-sm bg-gray-300 dark:bg-wood-700 text-gray-500 dark:text-gray-400 rounded-lg py-2 cursor-not-allowed" disabled>Generating...</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 5: MY SHOPPING LIST -->
+                <div id="section-shopping-list" class="content-section hidden space-y-5">
+                    <div class="flex flex-wrap justify-between items-center gap-3">
+                        <div>
+                            <h2 class="text-2xl font-bold text-wood-700 dark:text-wood-50">My Shopping List</h2>
+                            <p class="text-sm text-wood-500 dark:text-wood-400">Curated furniture and decor from your
+                                approved stagings</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button
+                                class="border border-wood-300 dark:border-wood-600 text-wood-600 dark:text-wood-400 px-4 py-2 rounded-xl text-sm hover:bg-wood-50 dark:hover:bg-wood-700 transition">Share
+                                with Designer</button>
+                            <button
+                                class="bg-wood-600 hover:bg-wood-700 text-white px-4 py-2 rounded-xl text-sm transition">Request
+                                Quote</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-wood-800 rounded-2xl overflow-hidden shadow border border-wood-200 dark:border-wood-700">
+                        <table class="w-full text-sm">
+                            <thead class="bg-wood-100 dark:bg-wood-700/50">
+                                <tr>
+                                    <th class="px-5 py-3 text-left text-wood-600 dark:text-wood-300">Item</th>
+                                    <th class="px-5 py-3 text-left text-wood-600 dark:text-wood-300">Qty</th>
+                                    <th class="px-5 py-3 text-left text-wood-600 dark:text-wood-300">Price</th>
+                                    <th class="px-5 py-3 text-left text-wood-600 dark:text-wood-300">Total</th>
+                                    <th class="px-5 py-3 text-left text-wood-600 dark:text-wood-300"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-wood-100 dark:divide-wood-700">
+                                <tr>
+                                    <td class="px-5 py-3 text-wood-700 dark:text-wood-200">Haven Sofa - Linen Beige</td>
+                                    <td class="px-5 py-3 text-wood-600 dark:text-wood-300">1</td>
+                                    <td class="px-5 py-3 text-wood-600 dark:text-wood-300">$1,290</td>
+                                    <td class="px-5 py-3 font-semibold text-wood-700 dark:text-wood-200">$1,290</td>
+                                    <td class="px-5 py-3"><i
+                                            class="bi bi-trash text-wood-400 dark:text-wood-500 cursor-pointer hover:text-red-500 transition"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-3 text-wood-700 dark:text-wood-200">Arc Floor Lamp - Brass</td>
+                                    <td class="px-5 py-3 text-wood-600 dark:text-wood-300">2</td>
+                                    <td class="px-5 py-3 text-wood-600 dark:text-wood-300">$349</td>
+                                    <td class="px-5 py-3 font-semibold text-wood-700 dark:text-wood-200">$698</td>
+                                    <td class="px-5 py-3"><i
+                                            class="bi bi-trash text-wood-400 dark:text-wood-500 cursor-pointer hover:text-red-500 transition"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-3 text-wood-700 dark:text-wood-200">Abstract Art Set - 3 Pieces
+                                    </td>
+                                    <td class="px-5 py-3 text-wood-600 dark:text-wood-300">1</td>
+                                    <td class="px-5 py-3 text-wood-600 dark:text-wood-300">$220</td>
+                                    <td class="px-5 py-3 font-semibold text-wood-700 dark:text-wood-200">$220</td>
+                                    <td class="px-5 py-3"><i
+                                            class="bi bi-trash text-wood-400 dark:text-wood-500 cursor-pointer hover:text-red-500 transition"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-3 text-wood-700 dark:text-wood-200">Wool Area Rug - 8x10</td>
+                                    <td class="px-5 py-3 text-wood-600 dark:text-wood-300">1</td>
+                                    <td class="px-5 py-3 text-wood-600 dark:text-wood-300">$682</td>
+                                    <td class="px-5 py-3 font-semibold text-wood-700 dark:text-wood-200">$682</td>
+                                    <td class="px-5 py-3"><i
+                                            class="bi bi-trash text-wood-400 dark:text-wood-500 cursor-pointer hover:text-red-500 transition"></i>
+                                    </td>
+                                </tr>
+                                <tr class="bg-wood-50 dark:bg-wood-700/30 font-bold">
+                                    <td class="px-5 py-3 text-wood-700 dark:text-wood-50">Total Estimate</td>
+                                    <td class="px-5 py-3"></td>
+                                    <td class="px-5 py-3"></td>
+                                    <td class="px-5 py-3 text-wood-700 dark:text-wood-50">$2,890</td>
+                                    <td class="px-5 py-3"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="flex justify-end gap-3 pt-4">
+                        <button
+                            class="border border-wood-300 dark:border-wood-600 px-6 py-2 rounded-xl text-wood-600 dark:text-wood-400 hover:bg-wood-50 dark:hover:bg-wood-700 transition">Save
+                            for Later</button>
+                        <button
+                            class="bg-wood-600 hover:bg-wood-700 text-white px-6 py-2 rounded-xl transition">Proceed
+                            to Order →</button>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const target = document.getElementById('section-' + sectionId);
+            if (target) target.classList.remove('hidden');
+
+            const titles = {
+                'dashboard': 'My Dashboard',
+                'upload-visualize': 'Upload Room',
+                'style-gallery': 'Design Styles',
+                'my-stagings': 'My Stagings',
+                'shopping-list': 'My Shopping List'
+            };
+            const titleEl = document.getElementById('page-title');
+            if (titleEl) titleEl.innerText = titles[sectionId] || 'My Dashboard';
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('bg-wood-200', 'dark:bg-wood-700', 'font-semibold');
+                link.classList.add('hover:bg-wood-200', 'dark:hover:bg-wood-800');
+            });
+            if (window.event && window.event.currentTarget) {
+                window.event.currentTarget.classList.add('bg-wood-200', 'dark:bg-wood-700', 'font-semibold');
+            }
+            if (window.innerWidth < 1024) closeSidebar();
+        }
+
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("overlay");
+        function openSidebar() { sidebar.classList.remove("-translate-x-full"); overlay.classList.remove("hidden"); document.body.style.overflow = 'hidden'; }
+        function closeSidebar() { sidebar.classList.add("-translate-x-full"); overlay.classList.add("hidden"); document.body.style.overflow = ''; }
+
+        document.getElementById("openSidebar")?.addEventListener('click', openSidebar);
+        document.getElementById("closeSidebar")?.addEventListener('click', closeSidebar);
+        overlay?.addEventListener('click', closeSidebar);
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle("dark");
+            const isDark = document.documentElement.classList.contains("dark");
+            const iconClass = isDark ? "bi bi-sun-fill" : "bi bi-moon-fill";
+            const desktopIcon = document.getElementById("themeIconDesktop");
+            const mobileIcon = document.getElementById("themeIconMobile");
+            if (desktopIcon) desktopIcon.className = iconClass;
+            if (mobileIcon) mobileIcon.className = iconClass;
+        }
+        document.getElementById("themeBtnDesktop")?.addEventListener('click', toggleTheme);
+        document.getElementById("themeBtnMobile")?.addEventListener('click', toggleTheme);
+
+        function toggleRTL() {
+            document.documentElement.dir = document.documentElement.dir === "rtl" ? "ltr" : "rtl";
+        }
+        document.getElementById("rtlBtnDesktop")?.addEventListener('click', toggleRTL);
+        document.getElementById("rtlBtnMobile")?.addEventListener('click', toggleRTL);
+
+        showSection('dashboard');
+        window.addEventListener('resize', function () { if (window.innerWidth >= 1024) closeSidebar(); });
+    </script>
+</body>
+
+</html>

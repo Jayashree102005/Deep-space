@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home1 - Core Hive</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <script src="tailwind.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
+    rel="stylesheet">
+  <style>
+    /* RTL */
+    .rtl {
+      direction: rtl;
+    }
+
+    [dir="rtl"] .title {
+      margin-right: 20px !important;
+    }
+
+    /* THEME TOGGLE */
+    :root {
+      --home-bg: #ffffff;
+      --text-color: #111111;
+    }
+
+    [data-theme="dark"] {
+      --home-bg: #000000;
+      --text-color: #ffffff;
+    }
+
+    body {
+      background-color: var(--home-bg) !important;
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    [data-theme="dark"] .card,
+    [data-theme="dark"] .bg-white,
+    [data-theme="dark"] .bg-white\/90,
+    [data-theme="dark"] .bg-white\/80,
+    [data-theme="dark"] .bg-white\/10,
+    [data-theme="dark"] .bg-\[\#FDFBF9\],
+    [data-theme="dark"] .bg-\[\#EFEBE9\]:not(.w-0\.5),
+    [data-theme="dark"] .bg-\[\#F9F7F5\] {
+      background-color: #000000 !important;
+      border-color: #333333 !important;
+    }
+
+    [data-theme="dark"] .btn,
+    [data-theme="dark"] .btn1:hover {
+      color: #000000 !important;
+    }
+
+    [data-theme="dark"] body,
+    [data-theme="dark"] p,
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3,
+    [data-theme="dark"] h4,
+    [data-theme="dark"] h5,
+    [data-theme="dark"] h6,
+    [data-theme="dark"] span,
+    [data-theme="dark"] li,
+    [data-theme="dark"] a,
+    [data-theme="dark"] i,
+    [data-theme="dark"] label,
+    [data-theme="dark"] table,
+    [data-theme="dark"] th,
+    [data-theme="dark"] td,
+    [data-theme="dark"] div,
+    [data-theme="dark"] small,
+    [data-theme="dark"] strong {
+      color: #ffffff !important;
+    }
+
+    [data-theme="dark"] thead {
+      background-color: #064E3B !important;
+    }
+
+    [data-theme="dark"] .hero-overlay {
+      background-color: rgba(0, 0, 0, 0.7) !important;
+    }
+
+    [data-theme="dark"] .tag-btn {
+      background-color: rgba(255, 255, 255, 0.1) !important;
+      border-color: #ffffff !important;
+    }
+  
+  </style>
+</head>
+
+<body class="font-sans">
+  <!-- navbar -->
+  <div id="navbar"></div>
+
+  <!-- HERO BANNER -->
+<section class="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    
+    <img src="images/bg4.avif" 
+         alt="Luxury Interior Background" 
+         class="absolute inset-0 w-full h-full object-cover z-0">
+
+    <div class="absolute inset-0 bg-[#3E2723]/60 z-10"></div>
+
+    <div class="relative z-20 text-center px-6 max-w-4xl mx-auto flex flex-col items-center">
+        
+        <span class="text-[#D7CCC8] font-bold tracking-[0.3em] text-xs md:text-sm uppercase mb-4 block">
+            Welcome to DeepSpace
+        </span>
+        
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-tight mb-6">
+            Transform Empty Spaces Instantly.
+        </h1>
+        
+        <p class="text-[#EFEBE9] text-base md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+            The leading AI staging platform for real estate professionals. High-end design, zero physical furniture required.
+        </p>
+        
+        <a href="#" class="btn1 bg-[#5D4037] text-white px-10 py-4 rounded-2xl font-bold shadow-xl hover:bg-white hover:text-[#3E2723] transition-all duration-300 transform hover:-translate-y-1">
+            Get Started Free
+        </a>
+        
+    </div>
+</section>
+<!-- SECTION1 -->
+ <section class="py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="text-center mb-20">
+            <h2 class="text-[#8D6E63] font-bold tracking-widest text-sm uppercase mb-4">Our Journey</h2>
+            <h3 class="text-4xl md:text-5xl font-black text-[#3E2723]">The Evolution of DeepSpace</h3>
+        </div>
+
+        <div class="relative space-y-12">
+            <div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-[#EFEBE9] -translate-x-1/2 hidden md:block"></div>
+
+            <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                <div class="md:w-[45%] bg-[#FDFBF9] p-8 rounded-[2.5rem] border border-[#EFEBE9] shadow-sm hover:shadow-xl transition-all duration-500">
+                    <span class="text-[#8D6E63] font-black text-2xl">2024</span>
+                    <h4 class="text-xl font-bold text-[#3E2723] mt-2 mb-4">Neural Inception</h4>
+                    <p class="text-[#5D4037] leading-relaxed">The agency was founded in San Francisco by a team of architectural rebels and AI researchers with a singular goal: to modernize the way we visualize living spaces.</p>
+                </div>
+                <div class="w-4 h-4 bg-[#3E2723] rounded-full border-4 border-white shadow-md relative z-10 hidden md:block"></div>
+                <div class="md:w-[45%] hidden md:block"></div>
+            </div>
+
+            <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                <div class="md:w-[45%] hidden md:block"></div>
+                <div class="w-4 h-4 bg-[#3E2723] rounded-full border-4 border-white shadow-md relative z-10 hidden md:block"></div>
+                <div class="md:w-[45%] bg-[#3E2723] p-8 rounded-[2.5rem] shadow-xl transition-all duration-500">
+                    <span class="text-[#D7CCC8] font-black text-2xl">2025</span>
+                    <h4 class="text-xl font-bold text-white mt-2 mb-4">Global Expansion</h4>
+                    <p class="text-[#D7CCC8] leading-relaxed">We processed our 1-millionth render and expanded our library to include 5,000+ designer assets, opening international hubs to support global demand.</p>
+                </div>
+            </div>
+
+            <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                <div class="md:w-[45%] bg-[#FDFBF9] p-8 rounded-[2.5rem] border border-[#EFEBE9] shadow-sm hover:shadow-xl transition-all duration-500">
+                    <span class="text-[#8D6E63] font-black text-2xl">2026</span>
+                    <h4 class="text-xl font-bold text-[#3E2723] mt-2 mb-4">The New Standard</h4>
+                    <p class="text-[#5D4037] leading-relaxed">DeepSpace becomes the official partner for elite real estate brokerages, defining the gold standard for property listing aesthetics and digital staging.</p>
+                </div>
+                <div class="w-4 h-4 bg-[#3E2723] rounded-full border-4 border-white shadow-md relative z-10 hidden md:block"></div>
+                <div class="md:w-[45%] hidden md:block"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- SECTION2 -->
+<section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="max-w-3xl mb-16">
+            <h2 class="text-[#8D6E63] font-bold tracking-widest text-xs uppercase mb-4">Industry Recognition</h2>
+            <h3 class="text-4xl md:text-5xl font-black text-[#3E2723] leading-tight">
+                Setting the benchmark for <br> digital craftsmanship.
+            </h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            
+            <div class="md:col-span-7 bg-[#FDFBF9] p-10 md:p-14 rounded-[3.5rem] border border-[#EFEBE9] flex flex-col justify-between hover:shadow-xl transition-all duration-500">
+                <div>
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8">
+                        <i class="bi bi-trophy text-3xl text-[#8D6E63]"></i>
+                    </div>
+                    <h4 class="text-2xl md:text-3xl font-bold text-[#3E2723] mb-4">PropTech Innovation Award 2026</h4>
+                    <p class="text-[#5D4037] text-lg leading-relaxed">
+                        DeepSpace was recognized as the most innovative visualization platform for the residential sector, outperforming over 200 global competitors in realism and rendering speed.
+                    </p>
+                </div>
+                <div class="mt-10 pt-8 border-t border-[#EFEBE9] flex items-center gap-4">
+                    <span class="text-[10px] font-black text-[#3E2723] uppercase tracking-widest">Awarded by the</span>
+                    <span class="font-bold text-[#8D6E63]">Global Real Estate Council</span>
+                </div>
+            </div>
+
+            <div class="md:col-span-5 bg-[#3E2723] p-10 md:p-14 rounded-[3.5rem] text-white flex flex-col justify-center relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-[#8D6E63] rounded-full blur-[100px] opacity-20 transition-opacity group-hover:opacity-40"></div>
+                
+                <span class="text-7xl md:text-8xl font-black text-white mb-4 leading-none">4.2B</span>
+                <h4 class="text-xl font-bold text-[#D7CCC8] mb-6">In Property Value Staged</h4>
+                <p class="text-white/70 text-sm leading-relaxed">
+                    Total valuation of real estate assets brought to market using our AI-enhanced staging profiles within the last 18 months.
+                </p>
+            </div>
+
+            <div class="md:col-span-4 bg-[#F9F7F5] p-10 rounded-[3rem] border border-[#EFEBE9] hover:bg-white hover:shadow-lg transition-all">
+                <div class="flex items-center gap-4 mb-6">
+                    <i class="bi bi-patch-check-fill text-2xl text-[#8D6E63]"></i>
+                    <h5 class="font-bold text-[#3E2723] text-lg leading-tight">MLS Gold Certified</h5>
+                </div>
+                <p class="text-[#5D4037] text-sm leading-relaxed">
+                    Our renders are fully compliant with all major MLS standards, ensuring high-fidelity outputs for professional listings.
+                </p>
+            </div>
+
+            <div class="md:col-span-4 bg-[#F9F7F5] p-10 rounded-[3rem] border border-[#EFEBE9] hover:bg-white hover:shadow-lg transition-all">
+                <div class="flex items-center gap-4 mb-6">
+                    <i class="bi bi-star-fill text-2xl text-[#8D6E63]"></i>
+                    <h5 class="font-bold text-[#3E2723] text-lg leading-tight">Five-Star Rating</h5>
+                </div>
+                <p class="text-[#5D4037] text-sm leading-relaxed">
+                    Maintained a perfect customer satisfaction score across 15,000+ verified agency reviews on G2 and Trustpilot.
+                </p>
+            </div>
+
+            <div class="md:col-span-4 bg-[#F9F7F5] p-10 rounded-[3rem] border border-[#EFEBE9] hover:bg-white hover:shadow-lg transition-all">
+                <div class="flex items-center gap-4 mb-6">
+                    <i class="bi bi-shield-lock-fill text-2xl text-[#8D6E63]"></i>
+                    <h5 class="font-bold text-[#3E2723] text-lg leading-tight">Enterprise Secure</h5>
+                </div>
+                <p class="text-[#5D4037] text-sm leading-relaxed">
+                    Data privacy and asset security protocols are certified under SOC2 Type II standards for global brokerages.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- SECTION3 -->
+ <section class="py-24 bg-white" id="team">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div class="max-w-2xl">
+                <h2 class="text-[#8D6E63] font-bold tracking-widest text-sm uppercase mb-4">The Collective</h2>
+                <h3 class="text-4xl md:text-5xl font-black text-[#3E2723]">Meet the visionaries behind the lens.</h3>
+            </div>
+            <p class="text-[#5D4037] max-w-xs text-sm leading-relaxed border-l-2 border-[#EFEBE9] pl-6 hidden lg:block">
+                Our team blends architectural heritage with neural engineering to redefine spatial perception.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div class="group relative bg-[#FDFBF9] rounded-[3rem] overflow-hidden border border-[#EFEBE9] transition-all duration-500 hover:shadow-2xl">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img src="images/team1.avif" 
+                         alt="Marcus Vance" 
+                         class="w-full h-full object-cover  group-hover:scale-105 transition-all duration-700">
+                </div>
+                
+                <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-[#3E2723] via-[#3E2723]/90 to-transparent translate-y-12 group-hover:translate-y-0 transition-transform duration-500">
+                    <h4 class="text-xl font-bold text-white">Marcus Vance</h4>
+                    <p class="text-[#D7CCC8] text-xs font-bold uppercase tracking-widest mb-4">Founder & CEO</p>
+                    
+                    <p class="text-white/80 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 mb-6">
+                        Former Lead Architect with 15 years experience in high-end residential development.
+                    </p>
+                    
+                    <div class="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                        <a href="#" class="text-white hover:text-[#8D6E63] transition-colors"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white hover:text-[#8D6E63] transition-colors"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative bg-[#FDFBF9] rounded-[3rem] overflow-hidden border border-[#EFEBE9] transition-all duration-500 hover:shadow-2xl">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img src="images/team2.avif" 
+                         alt="Elena Rostova" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                </div>
+                <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-[#3E2723] via-[#3E2723]/90 to-transparent translate-y-12 group-hover:translate-y-0 transition-transform duration-500">
+                    <h4 class="text-xl font-bold text-white">Dr. Elena</h4>
+                    <p class="text-[#D7CCC8] text-xs font-bold uppercase tracking-widest mb-4">CTO & AI Lead</p>
+                    <p class="text-white/80 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 mb-6">
+                        PhD in Neural Networks. Pioneer of the DeepSpace light-mapping algorithm.
+                    </p>
+                    <div class="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                        <a href="#" class="text-white hover:text-[#8D6E63] transition-colors"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white hover:text-[#8D6E63] transition-colors"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative bg-[#FDFBF9] rounded-[3rem] overflow-hidden border border-[#EFEBE9] transition-all duration-500 hover:shadow-2xl">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img src="images/team4.avif" 
+                         alt="Julian Sterling" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                </div>
+                <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-[#3E2723] via-[#3E2723]/90 to-transparent translate-y-12 group-hover:translate-y-0 transition-transform duration-500">
+                    <h4 class="text-xl font-bold text-white">Julian Sterling</h4>
+                    <p class="text-[#D7CCC8] text-xs font-bold uppercase tracking-widest mb-4">Creative Director</p>
+                    <p class="text-white/80 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 mb-6">
+                        Interior Stylist for Vogue Living. Curates our 5,000+ asset digital library.
+                    </p>
+                    <div class="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                        <a href="#" class="text-white hover:text-[#8D6E63] transition-colors"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-[#8D6E63] transition-colors"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative bg-[#FDFBF9] rounded-[3rem] overflow-hidden border border-[#EFEBE9] transition-all duration-500 hover:shadow-2xl">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img src="images/team3.avif" 
+                         alt="Sarah Jenkins" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                </div>
+                <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-[#3E2723] via-[#3E2723]/90 to-transparent translate-y-12 group-hover:translate-y-0 transition-transform duration-500">
+                    <h4 class="text-xl font-bold text-white">Sarah Jenkins</h4>
+                    <p class="text-[#D7CCC8] text-xs font-bold uppercase tracking-widest mb-4">Head of Operations</p>
+                    <p class="text-white/80 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 mb-6">
+                        Optimizing the rendering pipeline to ensure 24-hour delivery for global clients.
+                    </p>
+                    <div class="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                        <a href="#" class="text-white hover:text-[#8D6E63] transition-colors"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white hover:text-[#8D6E63] transition-colors"><i class="bi bi-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- SECTION4 -->
+ <section class="py-24 bg-[#FDFBF9]">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="relative">
+                <div class="rounded-[3.5rem] overflow-hidden shadow-2xl border-8 border-white transform  transition-transform duration-700">
+                    <img src="images/bg4.avif" 
+                         alt="DeepSpace Studio" 
+                         class="w-full h-[500px] object-cover">
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <h2 class="text-[#8D6E63] font-bold tracking-widest text-xs uppercase">Inside the Studio</h2>
+                <h3 class="text-4xl md:text-5xl font-black text-[#3E2723] leading-tight">
+                    Where architecture <br> meets algorithms.
+                </h3>
+                <p class="text-[#5D4037] text-lg leading-relaxed">
+                    We’ve cultivated a space where 3D artists feel like engineers and engineers think like stylists. Our studio culture is built on "Restless Refinement"—the belief that even the smallest shadow deserves 100% of our focus.
+                </p>
+                
+                <div class="pt-6 space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm">
+                            <i class="bi bi-people text-[#8D6E63]"></i>
+                        </div>
+                        <p class="text-[#3E2723] font-bold">Collaborative Creative Sprints</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm">
+                            <i class="bi bi-cup-hot text-[#8D6E63]"></i>
+                        </div>
+                        <p class="text-[#3E2723] font-bold">Modern, Inspired Workspace</p>
+                    </div>
+                </div>
+
+                <div class="pt-8">
+                    <a href="#" class="inline-block px-10 py-4 bg-[#3E2723] text-white rounded-2xl font-bold hover:bg-[#8D6E63] transition-all duration-300">
+                        Join our Collective
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- FOOTER -->
+  <div id="footer"></div>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+</script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+
+</html>

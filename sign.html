@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, height=device-height">
+    <title>StagingStudio | Sign Up - Home Renovation Visualizer</title>
+    <link rel="icon" href="https://img.icons8.com/ios-filled/50/ffffff/interior-design.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+                    },
+                    colors: {
+                        wood: {
+                            50: '#EFEBE9',
+                            100: '#D7CCC8',
+                            200: '#BCAAA4',
+                            300: '#A1887F',
+                            400: '#8D6E63',
+                            500: '#795548',
+                            600: '#6D4C41',
+                            700: '#5D4037',
+                            800: '#4E342E',
+                            900: '#3E2723',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            transition: background-color 0.3s ease;
+            overflow: hidden;
+        }
+
+        .signup-card {
+            backdrop-filter: blur(10px);
+            transition: transform 0.2s ease;
+        }
+
+        .signup-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .input-focus:focus {
+            ring: 2px solid #5D4037;
+            border-color: #5D4037;
+            outline: none;
+        }
+
+        /* Improved dark mode visibility */
+        .dark .text-wood-700 {
+            color: #EFEBE9 !important;
+        }
+
+        .dark .text-wood-600 {
+            color: #D7CCC8 !important;
+        }
+
+        .dark .text-wood-500 {
+            color: #BCAAA4 !important;
+        }
+
+        .dark .border-wood-200 {
+            border-color: #4E342E !important;
+        }
+
+        .dark .bg-white {
+            background-color: #2D2A2A !important;
+        }
+
+        .dark .bg-wood-50 {
+            background-color: #1a1412 !important;
+        }
+
+        /* RTL specific adjustments */
+        [dir="rtl"] .space-x-reverse {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .text-left {
+            text-align: right;
+        }
+
+        [dir="rtl"] .mr-2 {
+            margin-left: 0.5rem;
+            margin-right: 0;
+        }
+        
+        [dir="rtl"] .password-toggle {
+            right: auto;
+            left: 1rem;
+        }
+
+        /* Custom scrollbar for content if needed */
+        .form-container {
+            overflow-y: auto;
+            scrollbar-width: thin;
+        }
+        
+        .form-container::-webkit-scrollbar {
+            width: 3px;
+        }
+        
+        .form-container::-webkit-scrollbar-track {
+            background: #D7CCC8;
+            border-radius: 10px;
+        }
+        
+        .form-container::-webkit-scrollbar-thumb {
+            background: #5D4037;
+            border-radius: 10px;
+        }
+        
+        .dark .form-container::-webkit-scrollbar-track {
+            background: #3E2723;
+        }
+        
+        .dark .form-container::-webkit-scrollbar-thumb {
+            background: #8D6E63;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-gradient-to-br from-wood-50 to-wood-100 dark:from-[#1a1412] dark:to-[#0f0c0a] transition-colors duration-300 font-sans antialiased h-screen flex items-center justify-center p-3">
+
+    <div class="w-full max-w-sm md:max-w-md">
+
+        <!-- Theme and RTL Toggle Buttons (Top Right) -->
+        <div class="flex justify-end gap-2 mb-3">
+            <button id="themeToggleBtn"
+                class="p-2 rounded-xl bg-white dark:bg-wood-800 shadow-md border border-wood-200 dark:border-wood-700 text-wood-600 dark:text-wood-300 hover:bg-wood-50 dark:hover:bg-wood-700 transition-all duration-200">
+                <i id="themeIcon" class="bi bi-moon-fill text-base"></i>
+            </button>
+            <button id="rtlToggleBtn"
+                class="p-2 rounded-xl bg-white dark:bg-wood-800 shadow-md border border-wood-200 dark:border-wood-700 text-wood-600 dark:text-wood-300 hover:bg-wood-50 dark:hover:bg-wood-700 transition-all duration-200">
+                <i class="bi bi-arrow-left-right text-base"></i>
+            </button>
+        </div>
+
+        <!-- Sign Up Card - Reduced Height -->
+        <div
+            class="signup-card bg-white dark:bg-wood-800 rounded-2xl shadow-2xl border border-wood-200 dark:border-wood-700 overflow-hidden transition-all duration-300 max-h-[95vh] flex flex-col">
+            
+            <!-- Compact Header -->
+            <div class="px-5 pt-5 pb-3 text-center border-b border-wood-100 dark:border-wood-700">
+                <h1 class="text-2xl font-bold text-[#3E2723] dark:text-white">
+                    <a href="index.html" class="flex items-center justify-center gap-2 transition">
+                        <i class="bi bi-layers-half text-[#8D6E63] dark:text-white"></i>
+                        <span class="tracking-tight">DEEP</span>
+                        <span class="font-normal">SPACE</span>
+                    </a>
+                </h1>
+                <p class="text-xs text-wood-500 dark:text-wood-400 mt-1">Create your account</p>
+            </div>
+            
+            <!-- Scrollable Form Container -->
+            <div class="form-container px-5 py-4 overflow-y-auto flex-1">
+                <form id="signupForm" onsubmit="handleSignup(event)">
+                    <!-- Full Name Field -->
+                    <div class="mb-3">
+                        <label for="fullname" class="block text-xs font-semibold text-wood-700 dark:text-wood-200 mb-1.5">
+                            <i class="bi bi-person-fill mr-1 text-wood-500 dark:text-wood-400 text-sm"></i> Full Name
+                        </label>
+                        <input type="text" id="fullname" name="fullname" required
+                            class="input-focus w-full px-3 py-2.5 rounded-xl border border-wood-200 dark:border-wood-600 bg-wood-50 dark:bg-wood-900/50 text-wood-700 dark:text-wood-200 placeholder-wood-400 dark:placeholder-wood-500 focus:ring-2 focus:ring-wood-500 focus:border-transparent transition-all duration-200 text-sm"
+                            placeholder="John Doe">
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="mb-3">
+                        <label for="email" class="block text-xs font-semibold text-wood-700 dark:text-wood-200 mb-1.5">
+                            <i class="bi bi-envelope-fill mr-1 text-wood-500 dark:text-wood-400 text-sm"></i> Email Address
+                        </label>
+                        <input type="email" id="email" name="email" required
+                            class="input-focus w-full px-3 py-2.5 rounded-xl border border-wood-200 dark:border-wood-600 bg-wood-50 dark:bg-wood-900/50 text-wood-700 dark:text-wood-200 placeholder-wood-400 dark:placeholder-wood-500 focus:ring-2 focus:ring-wood-500 focus:border-transparent transition-all duration-200 text-sm"
+                            placeholder="john@example.com">
+                    </div>
+
+                    <!-- Password Field with Eye Icon -->
+                    <div class="mb-3">
+                        <label for="password" class="block text-xs font-semibold text-wood-700 dark:text-wood-200 mb-1.5">
+                            <i class="bi bi-lock-fill mr-1 text-wood-500 dark:text-wood-400 text-sm"></i> Password
+                        </label>
+                        <div class="relative">
+                            <input type="password" id="password" name="password" required
+                                class="input-focus w-full px-3 py-2.5 rounded-xl border border-wood-200 dark:border-wood-600 bg-wood-50 dark:bg-wood-900/50 text-wood-700 dark:text-wood-200 placeholder-wood-400 dark:placeholder-wood-500 focus:ring-2 focus:ring-wood-500 focus:border-transparent transition-all duration-200 pr-10 text-sm"
+                                placeholder="Create a strong password">
+                            <button type="button" id="togglePassword"
+                                class="absolute inset-y-0 right-2 flex items-center text-wood-500 dark:text-wood-400 hover:text-wood-700 dark:hover:text-wood-200 transition">
+                                <i id="passwordEyeIcon" class="bi bi-eye-slash-fill text-base"></i>
+                            </button>
+                        </div>
+                        <div id="passwordStrength" class="text-xs mt-1"></div>
+                    </div>
+
+                    <!-- Confirm Password Field with Eye Icon -->
+                    <div class="mb-4">
+                        <label for="confirmPassword" class="block text-xs font-semibold text-wood-700 dark:text-wood-200 mb-1.5">
+                            <i class="bi bi-shield-lock-fill mr-1 text-wood-500 dark:text-wood-400 text-sm"></i> Confirm Password
+                        </label>
+                        <div class="relative">
+                            <input type="password" id="confirmPassword" name="confirmPassword" required
+                                class="input-focus w-full px-3 py-2.5 rounded-xl border border-wood-200 dark:border-wood-600 bg-wood-50 dark:bg-wood-900/50 text-wood-700 dark:text-wood-200 placeholder-wood-400 dark:placeholder-wood-500 focus:ring-2 focus:ring-wood-500 focus:border-transparent transition-all duration-200 pr-10 text-sm"
+                                placeholder="Confirm your password">
+                            <button type="button" id="toggleConfirmPassword"
+                                class="absolute inset-y-0 right-2 flex items-center text-wood-500 dark:text-wood-400 hover:text-wood-700 dark:hover:text-wood-200 transition">
+                                <i id="confirmPasswordEyeIcon" class="bi bi-eye-slash-fill text-base"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="flex items-start gap-2 mb-4">
+                        <input type="checkbox" id="termsCheckbox" required
+                            class="mt-0.5 w-3.5 h-3.5 rounded border-wood-300 dark:border-wood-600 text-wood-600 focus:ring-wood-500 focus:ring-offset-0">
+                        <label for="termsCheckbox" class="text-xs text-wood-600 dark:text-wood-400 leading-tight">
+                            I agree to the <a href="#" class="text-wood-700 dark:text-wood-300 font-semibold hover:underline">Terms</a> & <a href="#" class="text-wood-700 dark:text-wood-300 font-semibold hover:underline">Privacy</a>
+                        </label>
+                    </div>
+
+                    <!-- Sign Up Button -->
+                    <button type="submit"
+                        class="w-full bg-gradient-to-r from-wood-700 to-wood-600 hover:from-wood-800 hover:to-wood-700 text-white font-semibold py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-[1.01] text-sm">
+                        <i class="bi bi-person-plus-fill mr-1"></i> Create Account
+                    </button>
+                </form>
+
+                <!-- Divider -->
+                <div class="relative my-4">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-wood-200 dark:border-wood-700"></div>
+                    </div>
+                    <div class="relative flex justify-center text-xs">
+                        <span class="px-3 bg-white dark:bg-wood-800 text-wood-500 dark:text-wood-400">Or sign up with</span>
+                    </div>
+                </div>
+
+                <!-- Social Sign Up Buttons -->
+                <div class="grid grid-cols-2 gap-2">
+                    <button type="button"
+                        class="flex items-center justify-center gap-2 px-3 py-2 border border-wood-200 dark:border-wood-600 rounded-xl text-wood-600 dark:text-wood-300 hover:bg-wood-50 dark:hover:bg-wood-700 transition-all duration-200 text-sm">
+                        <i class="bi bi-google text-base"></i>
+                        <span class="text-xs">Google</span>
+                    </button>
+                    <button type="button"
+                        class="flex items-center justify-center gap-2 px-3 py-2 border border-wood-200 dark:border-wood-600 rounded-xl text-wood-600 dark:text-wood-300 hover:bg-wood-50 dark:hover:bg-wood-700 transition-all duration-200 text-sm">
+                        <i class="bi bi-apple text-base"></i>
+                        <span class="text-xs">Apple</span>
+                    </button>
+                </div>
+
+                <!-- Login Link -->
+                <p class="text-center text-xs text-wood-500 dark:text-wood-400 mt-4 pb-1">
+                    Already have an account? 
+                    <a href="login.html" class="font-semibold text-wood-700 dark:text-wood-300 hover:text-wood-600 dark:hover:text-wood-200 transition">
+                        Login
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle Functionality
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.classList.add('dark');
+                updateThemeIcon(true);
+            } else {
+                document.documentElement.classList.remove('dark');
+                updateThemeIcon(false);
+            }
+        }
+
+        function updateThemeIcon(isDark) {
+            const themeIcon = document.getElementById('themeIcon');
+            if (themeIcon) {
+                themeIcon.className = isDark ? 'bi bi-sun-fill text-base' : 'bi bi-moon-fill text-base';
+            }
+        }
+
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.contains('dark');
+            if (isDark) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                updateThemeIcon(false);
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                updateThemeIcon(true);
+            }
+        }
+
+        // RTL Toggle Functionality
+        function initRTL() {
+            const savedDir = localStorage.getItem('dir');
+            if (savedDir === 'rtl') {
+                document.documentElement.dir = 'rtl';
+            } else {
+                document.documentElement.dir = 'ltr';
+            }
+        }
+
+        function toggleRTL() {
+            const currentDir = document.documentElement.dir;
+            const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+            document.documentElement.dir = newDir;
+            localStorage.setItem('dir', newDir);
+        }
+
+        // Password Visibility Toggle for Password Field
+        function initPasswordToggle() {
+            const toggleBtn = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('passwordEyeIcon');
+            
+            if (toggleBtn && passwordInput && eyeIcon) {
+                toggleBtn.addEventListener('click', function() {
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    eyeIcon.className = type === 'password' ? 'bi bi-eye-slash-fill text-base' : 'bi bi-eye-fill text-base';
+                });
+            }
+        }
+
+        // Password Visibility Toggle for Confirm Password Field
+        function initConfirmPasswordToggle() {
+            const toggleBtn = document.getElementById('toggleConfirmPassword');
+            const confirmInput = document.getElementById('confirmPassword');
+            const eyeIcon = document.getElementById('confirmPasswordEyeIcon');
+            
+            if (toggleBtn && confirmInput && eyeIcon) {
+                toggleBtn.addEventListener('click', function() {
+                    const type = confirmInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    confirmInput.setAttribute('type', type);
+                    eyeIcon.className = type === 'password' ? 'bi bi-eye-slash-fill text-base' : 'bi bi-eye-fill text-base';
+                });
+            }
+        }
+
+        // Password strength checker
+        function checkPasswordStrength(password) {
+            let strength = 0;
+            if (password.length >= 8) strength++;
+            if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength++;
+            if (password.match(/[0-9]/)) strength++;
+            if (password.match(/[^a-zA-Z0-9]/)) strength++;
+            return strength;
+        }
+
+        // Handle Sign Up
+        function handleSignup(event) {
+            event.preventDefault();
+            
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const termsCheckbox = document.getElementById('termsCheckbox');
+            
+            // Validation
+            if (!fullname.trim()) {
+                alert('Please enter your full name');
+                return;
+            }
+            
+            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return;
+            }
+            
+            if (!termsCheckbox.checked) {
+                alert('Please agree to the Terms of Service and Privacy Policy');
+                return;
+            }
+            
+            // Check password strength
+            const strength = checkPasswordStrength(password);
+            let strengthMessage = '';
+            if (strength === 4) strengthMessage = 'Strong password!';
+            else if (strength === 3) strengthMessage = 'Good password, but could be stronger.';
+            else if (strength < 3) strengthMessage = 'Consider using a stronger password with uppercase, numbers, and symbols.';
+            
+            // Simulate account creation - demo redirect to login
+            alert(`Account created successfully!\n\nWelcome, ${fullname}!\n${strengthMessage}\n\nYou will now be redirected to login.`);
+            
+            // Store demo user info
+            localStorage.setItem('signupEmail', email);
+            localStorage.setItem('signupName', fullname);
+            
+            // Redirect to login page
+            window.location.href = 'login.html';
+        }
+
+        // Attach event listeners
+        document.getElementById('themeToggleBtn')?.addEventListener('click', toggleTheme);
+        document.getElementById('rtlToggleBtn')?.addEventListener('click', toggleRTL);
+        
+        // Initialize on page load
+        initTheme();
+        initRTL();
+        initPasswordToggle();
+        initConfirmPasswordToggle();
+
+        // Password strength indicator
+        const passwordInput = document.getElementById('password');
+        if (passwordInput) {
+            passwordInput.addEventListener('input', function() {
+                const strength = checkPasswordStrength(this.value);
+                const strengthSpan = document.getElementById('passwordStrength');
+                if (strengthSpan) {
+                    if (this.value.length === 0) {
+                        strengthSpan.textContent = '';
+                        strengthSpan.className = 'text-xs mt-1';
+                    } else if (strength === 4) {
+                        strengthSpan.innerHTML = '<i class="bi bi-check-circle-fill text-green-500 mr-1 text-[10px]"></i> Strong password';
+                        strengthSpan.className = 'text-xs mt-1 text-green-600 dark:text-green-400';
+                    } else if (strength === 3) {
+                        strengthSpan.innerHTML = '<i class="bi bi-exclamation-triangle-fill text-yellow-500 mr-1 text-[10px]"></i> Medium password';
+                        strengthSpan.className = 'text-xs mt-1 text-yellow-600 dark:text-yellow-400';
+                    } else {
+                        strengthSpan.innerHTML = '<i class="bi bi-x-circle-fill text-red-500 mr-1 text-[10px]"></i> Weak - use uppercase, numbers, symbols';
+                        strengthSpan.className = 'text-xs mt-1 text-red-600 dark:text-red-400';
+                    }
+                }
+            });
+        }
+
+        // Prevent body scroll on mobile when form overflows
+        const formContainer = document.querySelector('.form-container');
+        if (formContainer) {
+            formContainer.addEventListener('touchstart', function(e) {
+                if (this.scrollHeight > this.clientHeight) {
+                    // Allow scrolling only within container
+                    return true;
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
