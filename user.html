@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>StagingStudio | Client Dashboard - Home Renovation Visualizer</title>
+    <title>Client Dashboard - Deep Space</title>
     <link rel="icon" href="https://img.icons8.com/ios-filled/50/ffffff/interior-design.png">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
@@ -134,15 +134,15 @@
             class="fixed lg:static inset-y-0 left-0 w-72 bg-white dark:bg-wood-900 text-wood-800 dark:text-wood-50 flex flex-col transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out z-50 shadow-2xl lg:shadow-lg">
             <div
                 class="p-5 text-2xl font-bold flex justify-between items-center border-b border-wood-300 dark:border-wood-700">
-                <h1 class="text-2xl font-bold text-[#3E2723] dark:text-white">
-                    <a href="index.html" class="flex items-center gap-2 transition">
-                        <i class="bi bi-layers-half text-[#8D6E63] dark:text-white"></i>
-                        <span class="tracking-tight">DEEP</span>
-                        <span class="font-normal">SPACE</span>
-                    </a>
-                </h1>
+                <h1 class="text-2xl font-bold text-[#3E2723]">
+  <a href="index.html" class="flex items-center gap-2 ">
+    <i class="bi bi-layers-half text-[#8D6E63]"></i>
+    <span class="tracking-tight">DEEP</span>
+    <span class="font-normal">SPACE</span>
+  </a>
+</h1>
                 <button id="closeSidebar"
-                    class="lg:hidden text-wood-700 dark:text-wood-300 hover:bg-wood-200 dark:hover:bg-wood-800 p-2 rounded-full"><i
+                    class="lg:hidden text-wood-700 dark:text-wood-300 hover:bg-wood-200 dark:hover:bg-wood-800 p-2 rounded-xl"><i
                         class="bi bi-x-lg text-xl"></i></button>
             </div>
 
@@ -153,25 +153,25 @@
                     <i class="bi bi-house-door-fill text-lg"></i> My Dashboard
                 </a>
                 <a href="javascript:void(0)" onclick="showSection('upload-visualize')"
-                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-wood-200 dark:hover:bg-wood-800 transition-all text-wood-700 dark:text-wood-200">
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-full hover:bg-wood-200 dark:hover:bg-wood-800 transition-all text-wood-700 dark:text-wood-200">
                     <i class="bi bi-camera-fill text-lg"></i> Upload Room
                 </a>
                 <a href="javascript:void(0)" onclick="showSection('style-gallery')"
-                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-wood-200 dark:hover:bg-wood-800 transition-all text-wood-700 dark:text-wood-200">
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-full hover:bg-wood-200 dark:hover:bg-wood-800 transition-all text-wood-700 dark:text-wood-200">
                     <i class="bi bi-palette-fill text-lg"></i> Design Styles
                 </a>
                 <a href="javascript:void(0)" onclick="showSection('my-stagings')"
-                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-wood-200 dark:hover:bg-wood-800 transition-all text-wood-700 dark:text-wood-200">
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-full hover:bg-wood-200 dark:hover:bg-wood-800 transition-all text-wood-700 dark:text-wood-200">
                     <i class="bi bi-images text-lg"></i> My Stagings
                 </a>
                 <a href="javascript:void(0)" onclick="showSection('shopping-list')"
-                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-wood-200 dark:hover:bg-wood-800 transition-all text-wood-700 dark:text-wood-200">
+                    class="nav-link flex items-center gap-3 px-4 py-3 rounded-full hover:bg-wood-200 dark:hover:bg-wood-800 transition-all text-wood-700 dark:text-wood-200">
                     <i class="bi bi-cart-check-fill text-lg"></i> My Shopping List
                 </a>
 
                 <div class="pt-8 mt-4 border-t border-wood-300 dark:border-wood-700">
                     <a href="login.html"
-                        class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-wood-200 dark:hover:bg-wood-800 transition-all text-red-700 dark:text-red-400">
+                        class="flex items-center gap-3 px-4 py-3 rounded-full hover:bg-wood-200 dark:hover:bg-wood-800 transition-all text-red-700 dark:text-red-400">
                         <i class="bi bi-box-arrow-left text-lg"></i> Logout
                     </a>
                 </div>
@@ -197,10 +197,10 @@
                 class="bg-white dark:bg-wood-900 shadow-md px-4 sm:px-6 py-3 flex justify-between items-center z-20 border-b border-wood-200 dark:border-wood-700">
                 <div class="flex items-center gap-3">
                     <button id="openSidebar"
-                        class="lg:hidden text-2xl text-wood-700 dark:text-wood-200 p-1 hover:bg-wood-100 dark:hover:bg-wood-800 rounded-lg">
+                        class="lg:hidden text-2xl text-wood-700 dark:text-wood-200 p-1 hover:bg-wood-100 dark:hover:bg-wood-800 rounded-xl">
                         <i class="bi bi-list"></i>
                     </button>
-                    <h1 id="page-title" class="text-lg sm:text-xl font-bold text-wood-700 dark:text-wood-50 truncate">
+                    <h1 id="page-title" class="text-lg sm:text-xl font-semibold text-wood-700 dark:text-wood-50 truncate">
                         My Dashboard
                     </h1>
                 </div>
@@ -209,11 +209,11 @@
                     <!-- desktop theme/rtl -->
                     <div class="hidden md:flex gap-2">
                         <button id="themeBtnDesktop"
-                            class="p-2 rounded-lg border border-wood-300 dark:border-wood-600 text-wood-600 dark:text-wood-300 hover:bg-wood-100 dark:hover:bg-wood-800 transition">
+                            class="p-2 rounded-xl border border-wood-300 dark:border-wood-600 text-wood-600 dark:text-wood-300 hover:bg-wood-100 dark:hover:bg-wood-800 transition">
                             <i id="themeIconDesktop" class="bi bi-moon-fill text-base"></i>
                         </button>
                         <button id="rtlBtnDesktop"
-                            class="p-2 rounded-lg border border-wood-300 dark:border-wood-600 text-wood-600 dark:text-wood-300 hover:bg-wood-100 dark:hover:bg-wood-800 transition">
+                            class="p-2 rounded-xl border border-wood-300 dark:border-wood-600 text-wood-600 dark:text-wood-300 hover:bg-wood-100 dark:hover:bg-wood-800 transition">
                             <i class="bi bi-arrow-left-right text-base"></i>
                         </button>
                     </div>
@@ -239,13 +239,13 @@
                                         Client</span>
                                 </div>
                                 <a href="#"
-                                    class="block px-4 py-2 text-sm hover:bg-wood-50 dark:hover:bg-wood-700 text-wood-700 dark:text-wood-200">My
+                                    class="block px-4 py-3 text-sm hover:bg-wood-50 dark:hover:bg-wood-700 text-wood-700 dark:text-wood-200">My
                                     Profile</a>
                                 <a href="#"
-                                    class="block px-4 py-2 text-sm hover:bg-wood-50 dark:hover:bg-wood-700 text-wood-700 dark:text-wood-200">Project
+                                    class="block px-4 py-3 text-sm hover:bg-wood-50 dark:hover:bg-wood-700 text-wood-700 dark:text-wood-200">Project
                                     Settings</a>
                                 <a href="login.html"
-                                    class="block px-4 py-2 text-sm hover:bg-wood-50 dark:hover:bg-wood-700 text-red-600 dark:text-red-400 border-t border-wood-100 dark:border-wood-700">Sign
+                                    class="block px-4 py-3 text-sm hover:bg-wood-50 dark:hover:bg-wood-700 text-red-600 dark:text-red-400 border-t border-wood-100 dark:border-wood-700">Sign
                                     Out</a>
                             </div>
                         </div>
@@ -260,7 +260,7 @@
                     <div
                         class="bg-gradient-to-r from-wood-700 to-wood-600 text-white p-5 sm:p-8 rounded-2xl shadow-xl relative overflow-hidden">
                         <div class="relative z-10">
-                            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Welcome back, Linda! 👋</h2>
+                            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Welcome back, Linda!</h2>
                             <p class="opacity-90 mt-2 max-w-2xl text-xs sm:text-sm leading-relaxed">
                                 Your renovation journey starts here. Upload room photos, explore design styles, and see
                                 AI-powered staging previews. Track your projects and shopping list all in one place.
@@ -275,28 +275,28 @@
                             class="bg-white dark:bg-wood-800 p-4 sm:p-5 rounded-2xl shadow-md border border-wood-200 dark:border-wood-700">
                             <p class="text-wood-500 dark:text-wood-400 text-[11px] font-bold uppercase tracking-wider">
                                 Active Projects</p>
-                            <h3 class="text-2xl font-black text-wood-700 dark:text-wood-50 mt-1">2</h3>
+                            <h3 class="text-2xl font-semibold text-wood-700 dark:text-wood-50 mt-1">2</h3>
                             <p class="text-[10px] text-green-600 dark:text-green-400 mt-1">Living Room + Bedroom</p>
                         </div>
                         <div
                             class="bg-white dark:bg-wood-800 p-4 sm:p-5 rounded-2xl shadow-md border border-wood-200 dark:border-wood-700">
                             <p class="text-wood-500 dark:text-wood-400 text-[11px] font-bold uppercase tracking-wider">
                                 Staging Previews</p>
-                            <h3 class="text-2xl font-black text-wood-700 dark:text-wood-50 mt-1">4</h3>
+                            <h3 class="text-2xl font-semibold text-wood-700 dark:text-wood-50 mt-1">4</h3>
                             <p class="text-[10px] text-wood-500 dark:text-wood-400 mt-1">2 pending approval</p>
                         </div>
                         <div
                             class="bg-white dark:bg-wood-800 p-4 sm:p-5 rounded-2xl shadow-md border border-wood-200 dark:border-wood-700">
                             <p class="text-wood-500 dark:text-wood-400 text-[11px] font-bold uppercase tracking-wider">
                                 Design Style Saved</p>
-                            <h3 class="text-2xl font-black text-wood-700 dark:text-wood-50 mt-1">3</h3>
+                            <h3 class="text-2xl font-semibold text-wood-700 dark:text-wood-50 mt-1">3</h3>
                             <p class="text-[10px] text-wood-500 dark:text-wood-400 mt-1">Farmhouse, Japandi, Organic</p>
                         </div>
                         <div
                             class="bg-white dark:bg-wood-800 p-4 sm:p-5 rounded-2xl shadow-md border border-wood-200 dark:border-wood-700">
                             <p class="text-wood-500 dark:text-wood-400 text-[11px] font-bold uppercase tracking-wider">
                                 Shopping List Total</p>
-                            <h3 class="text-2xl font-black text-green-600 dark:text-green-400 mt-1">$2,890</h3>
+                            <h3 class="text-2xl font-semibold text-green-600 dark:text-green-400 mt-1">$2,890</h3>
                             <p class="text-[10px] text-wood-500 dark:text-wood-400 mt-1">6 items ready to order</p>
                         </div>
                     </div>
@@ -304,7 +304,7 @@
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
                         <div
                             class="bg-white dark:bg-wood-800 p-5 rounded-2xl shadow-sm border border-wood-200 dark:border-wood-700">
-                            <h3 class="font-bold text-wood-700 dark:text-wood-50 flex items-center gap-2"><i
+                            <h3 class="font-semibold text-wood-700 dark:text-wood-50 flex items-center gap-2"><i
                                     class="bi bi-clock-history"></i> Recent Activity</h3>
                             <div class="space-y-3 mt-3">
                                 <div
@@ -327,14 +327,14 @@
                         </div>
                         <div
                             class="bg-white dark:bg-wood-800 p-5 rounded-2xl shadow-sm border border-wood-200 dark:border-wood-700">
-                            <h3 class="font-bold text-wood-700 dark:text-wood-50 flex items-center gap-2"><i
+                            <h3 class="font-semibold text-wood-700 dark:text-wood-50 flex items-center gap-2"><i
                                     class="bi bi-chat-dots"></i> Designer Notes</h3>
                             <div class="space-y-3 mt-3">
                                 <div class="p-3 bg-wood-50 dark:bg-wood-900/50 rounded-lg">
                                     <p class="text-sm text-wood-600 dark:text-wood-300">"The farmhouse style looks
                                         stunning in your living room. I've added a curated furniture selection to your
                                         shopping list."</p>
-                                    <p class="text-xs text-wood-400 dark:text-wood-500 mt-2">— Elena Wright, Designer
+                                    <p class="text-xs text-wood-400 dark:text-wood-500 mt-2">– Elena Wright, Designer
                                     </p>
                                 </div>
                                 <button
@@ -348,14 +348,14 @@
                 <!-- SECTION 2: UPLOAD ROOM -->
                 <div id="section-upload-visualize" class="content-section hidden space-y-5">
                     <div>
-                        <h2 class="text-2xl font-bold text-wood-700 dark:text-wood-50">Upload Your Room</h2>
+                        <h2 class="text-2xl font-semibold text-wood-700 dark:text-wood-50">Upload Your Room</h2>
                         <p class="text-sm text-wood-500 dark:text-wood-400">Upload photos of your space and let AI
                             generate stunning design previews</p>
                     </div>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div
                             class="bg-white dark:bg-wood-800 rounded-2xl p-5 shadow-sm border border-wood-200 dark:border-wood-700">
-                            <h3 class="font-bold mb-3 flex items-center gap-2 text-wood-700 dark:text-wood-50"><i
+                            <h3 class="font-semibold mb-3 flex items-center gap-2 text-wood-700 dark:text-wood-50"><i
                                     class="bi bi-camera"></i> Upload Photo</h3>
                             <div
                                 class="bg-wood-50 dark:bg-wood-900/50 rounded-xl h-48 flex flex-col items-center justify-center border-2 border-dashed border-wood-300 dark:border-wood-600 cursor-pointer hover:bg-wood-100 dark:hover:bg-wood-800 transition">
@@ -364,12 +364,12 @@
                                     upload</span>
                             </div>
                             <button
-                                class="mt-4 bg-wood-600 hover:bg-wood-700 text-white px-4 py-2 rounded-xl text-sm w-full transition">Select
+                                class="mt-4 bg-wood-600 hover:bg-wood-700 text-white px-4 py-3 rounded-xl text-sm w-full transition">Select
                                 Image</button>
                         </div>
                         <div
                             class="bg-white dark:bg-wood-800 rounded-2xl p-5 shadow-sm border border-wood-200 dark:border-wood-700">
-                            <h3 class="font-bold mb-3 flex items-center gap-2 text-wood-700 dark:text-wood-50"><i
+                            <h3 class="font-semibold mb-3 flex items-center gap-2 text-wood-700 dark:text-wood-50"><i
                                     class="bi bi-magic"></i> Room Details</h3>
                             <div class="space-y-3">
                                 <select
@@ -383,7 +383,7 @@
                                 <input type="text" placeholder="Room name (e.g., Master Bedroom)"
                                     class="w-full border border-wood-200 dark:border-wood-700 dark:bg-wood-900 rounded-xl p-2 text-sm text-wood-700 dark:text-wood-200">
                                 <button
-                                    class="w-full bg-wood-600 hover:bg-wood-700 text-white py-2 rounded-xl text-sm transition">Upload
+                                    class="w-full bg-wood-600 hover:bg-wood-700 text-white py-3 rounded-xl text-sm transition">Upload
                                     & Process</button>
                             </div>
                         </div>
@@ -396,7 +396,7 @@
 
                 <!-- SECTION 3: DESIGN STYLES GALLERY -->
                 <div id="section-style-gallery" class="content-section hidden space-y-5">
-                    <h2 class="text-2xl font-bold text-wood-700 dark:text-wood-50">Explore Design Styles</h2>
+                    <h2 class="text-2xl font-semibold text-wood-700 dark:text-wood-50">Explore Design Styles</h2>
                     <p class="text-sm text-wood-500 dark:text-wood-400">Save your favorite styles to apply to your room
                         stagings</p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -405,11 +405,11 @@
                             <div class="h-36 bg-wood-300 dark:bg-wood-700 flex items-center justify-center"><i
                                     class="bi bi-house-heart text-5xl text-white/80"></i></div>
                             <div class="p-4">
-                                <h3 class="font-bold text-wood-700 dark:text-wood-50">Modern Farmhouse</h3>
+                                <h3 class="font-semibold text-wood-700 dark:text-wood-50">Modern Farmhouse</h3>
                                 <p class="text-xs text-wood-500 dark:text-wood-400 mt-1">Shiplap, neutral tones, vintage
                                     accents</p>
                                 <button
-                                    class="mt-3 w-full text-sm border border-wood-300 dark:border-wood-600 rounded-lg py-1.5 text-wood-600 dark:text-wood-400 hover:bg-wood-50 dark:hover:bg-wood-700 transition">Save
+                                    class="mt-3 w-full text-sm border border-wood-300 dark:border-wood-600 rounded-xl py-3 text-wood-600 dark:text-wood-400 hover:bg-wood-50 dark:hover:bg-wood-700 transition">Save
                                     Style</button>
                             </div>
                         </div>
@@ -418,11 +418,11 @@
                             <div class="h-36 bg-wood-400 dark:bg-wood-600 flex items-center justify-center"><i
                                     class="bi bi-flower2 text-5xl text-white/80"></i></div>
                             <div class="p-4">
-                                <h3 class="font-bold text-wood-700 dark:text-wood-50">Japandi Minimalism</h3>
+                                <h3 class="font-semibold text-wood-700 dark:text-wood-50">Japandi Minimalism</h3>
                                 <p class="text-xs text-wood-500 dark:text-wood-400 mt-1">Warm wood, clean lines, zen
                                     atmosphere</p>
                                 <button
-                                    class="mt-3 w-full text-sm border border-wood-300 dark:border-wood-600 rounded-lg py-1.5 text-wood-600 dark:text-wood-400 hover:bg-wood-50 dark:hover:bg-wood-700 transition">Save
+                                    class="mt-3 w-full text-sm border border-wood-300 dark:border-wood-600 rounded-xl py-3 text-wood-600 dark:text-wood-400 hover:bg-wood-50 dark:hover:bg-wood-700 transition">Save
                                     Style</button>
                             </div>
                         </div>
@@ -431,11 +431,11 @@
                             <div class="h-36 bg-wood-500 dark:bg-wood-500 flex items-center justify-center"><i
                                     class="bi bi-gem text-5xl text-white/80"></i></div>
                             <div class="p-4">
-                                <h3 class="font-bold text-wood-700 dark:text-wood-50">Organic Modern</h3>
+                                <h3 class="font-semibold text-wood-700 dark:text-wood-50">Organic Modern</h3>
                                 <p class="text-xs text-wood-500 dark:text-wood-400 mt-1">Curved furniture, natural
                                     stone, earthy palette</p>
                                 <button
-                                    class="mt-3 w-full text-sm border border-wood-300 dark:border-wood-600 rounded-lg py-1.5 text-wood-600 dark:text-wood-400 hover:bg-wood-50 dark:hover:bg-wood-700 transition">Save
+                                    class="mt-3 w-full text-sm border border-wood-300 dark:border-wood-600 rounded-xl py-3 text-wood-600 dark:text-wood-400 hover:bg-wood-50 dark:hover:bg-wood-700 transition">Save
                                     Style</button>
                             </div>
                         </div>
@@ -446,12 +446,12 @@
                 <div id="section-my-stagings" class="content-section hidden space-y-5">
                     <div class="flex justify-between items-center flex-wrap gap-3">
                         <div>
-                            <h2 class="text-2xl font-bold text-wood-700 dark:text-wood-50">My Staging Previews</h2>
+                            <h2 class="text-2xl font-semibold text-wood-700 dark:text-wood-50">My Staging Previews</h2>
                             <p class="text-sm text-wood-500 dark:text-wood-400">View and approve AI-generated room
                                 designs</p>
                         </div>
                         <button
-                            class="bg-wood-600 hover:bg-wood-700 text-white px-4 py-2 rounded-xl text-sm transition">Request
+                            class="bg-wood-600 hover:bg-wood-700 text-white px-4 py-3 rounded-xl text-sm transition">Request
                             New Staging</button>
                     </div>
 
@@ -464,14 +464,14 @@
                                     class="absolute top-3 right-3 text-xs bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-400 px-2 py-1 rounded-full">Ready</span>
                             </div>
                             <div class="p-4">
-                                <h3 class="font-bold text-wood-700 dark:text-wood-50">Living Room - Farmhouse Style</h3>
+                                <h3 class="font-semibold text-wood-700 dark:text-wood-50">Living Room - Farmhouse Style</h3>
                                 <p class="text-xs text-wood-500 dark:text-wood-400 mt-1">Generated Mar 15, 2026</p>
                                 <div class="flex gap-2 mt-4">
                                     <button
-                                        class="flex-1 text-sm bg-wood-600 hover:bg-wood-700 text-white rounded-lg py-2 transition">View
+                                        class="flex-1 text-sm bg-wood-600 hover:bg-wood-700 text-white rounded-xl py-3 transition">View
                                         Preview</button>
                                     <button
-                                        class="flex-1 text-sm border border-wood-300 dark:border-wood-600 rounded-lg py-2 text-wood-600 dark:text-wood-400 hover:bg-wood-50 dark:hover:bg-wood-700 transition">Approve</button>
+                                        class="flex-1 text-sm border border-wood-300 dark:border-wood-600 rounded-xl py-3 text-wood-600 dark:text-wood-400 hover:bg-wood-50 dark:hover:bg-wood-700 transition">Approve</button>
                                 </div>
                             </div>
                         </div>
@@ -483,11 +483,11 @@
                                     class="absolute top-3 right-3 text-xs bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-400 px-2 py-1 rounded-full">Processing</span>
                             </div>
                             <div class="p-4">
-                                <h3 class="font-bold text-wood-700 dark:text-wood-50">Master Bedroom - Japandi</h3>
+                                <h3 class="font-semibold text-wood-700 dark:text-wood-50">Master Bedroom - Japandi</h3>
                                 <p class="text-xs text-wood-500 dark:text-wood-400 mt-1">Requested Mar 18, 2026</p>
                                 <div class="flex gap-2 mt-4">
                                     <button
-                                        class="flex-1 text-sm bg-gray-300 dark:bg-wood-700 text-gray-500 dark:text-gray-400 rounded-lg py-2 cursor-not-allowed" disabled>Generating...</button>
+                                        class="flex-1 text-sm bg-gray-300 dark:bg-wood-700 text-gray-500 dark:text-gray-400 rounded-xl py-3 cursor-not-allowed" disabled>Generating...</button>
                                 </div>
                             </div>
                         </div>
@@ -498,16 +498,16 @@
                 <div id="section-shopping-list" class="content-section hidden space-y-5">
                     <div class="flex flex-wrap justify-between items-center gap-3">
                         <div>
-                            <h2 class="text-2xl font-bold text-wood-700 dark:text-wood-50">My Shopping List</h2>
+                            <h2 class="text-2xl font-semibold text-wood-700 dark:text-wood-50">My Shopping List</h2>
                             <p class="text-sm text-wood-500 dark:text-wood-400">Curated furniture and decor from your
                                 approved stagings</p>
                         </div>
                         <div class="flex gap-2">
                             <button
-                                class="border border-wood-300 dark:border-wood-600 text-wood-600 dark:text-wood-400 px-4 py-2 rounded-xl text-sm hover:bg-wood-50 dark:hover:bg-wood-700 transition">Share
+                                class="border border-wood-300 dark:border-wood-600 text-wood-600 dark:text-wood-400 px-4 py-3 rounded-xl text-sm hover:bg-wood-50 dark:hover:bg-wood-700 transition">Share
                                 with Designer</button>
                             <button
-                                class="bg-wood-600 hover:bg-wood-700 text-white px-4 py-2 rounded-xl text-sm transition">Request
+                                class="bg-wood-600 hover:bg-wood-700 text-white px-4 py-3 rounded-xl text-sm transition">Request
                                 Quote</button>
                         </div>
                     </div>
@@ -574,10 +574,10 @@
 
                     <div class="flex justify-end gap-3 pt-4">
                         <button
-                            class="border border-wood-300 dark:border-wood-600 px-6 py-2 rounded-xl text-wood-600 dark:text-wood-400 hover:bg-wood-50 dark:hover:bg-wood-700 transition">Save
+                            class="border border-wood-300 dark:border-wood-600 px-6 py-3 rounded-xl text-wood-600 dark:text-wood-400 hover:bg-wood-50 dark:hover:bg-wood-700 transition">Save
                             for Later</button>
                         <button
-                            class="bg-wood-600 hover:bg-wood-700 text-white px-6 py-2 rounded-xl transition">Proceed
+                            class="bg-wood-600 hover:bg-wood-700 text-white px-6 py-3 rounded-xl transition">Proceed
                             to Order →</button>
                     </div>
                 </div>
@@ -647,3 +647,8 @@
 </body>
 
 </html>
+
+
+
+
+
